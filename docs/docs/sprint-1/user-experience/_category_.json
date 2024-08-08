@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "User Experience",
+    "collapsible": false,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção é possível encontrar todos os artefatos relacionados a experiência do usuário."
+    }
+  }
