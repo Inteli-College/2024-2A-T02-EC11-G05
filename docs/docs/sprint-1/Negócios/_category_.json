@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Negócios",
+    "collapsible": false,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção é possível encontrar todos os artefatos relacionados a Negócios."
+    }
+  }
