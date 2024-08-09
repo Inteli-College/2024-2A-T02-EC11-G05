@@ -61,7 +61,7 @@ const config = {
       // Replace with your project's social card
       image: "img/inteli.svg",
       navbar: {
-        title: "Grupo5 - Carbon Cheack",
+        title: "Grupo5",
         logo: {
           alt: "My Site Logo",
           src: "img/inteli.svg",
