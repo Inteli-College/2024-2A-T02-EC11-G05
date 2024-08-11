@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Análise de Impacto Ético",
+    "collapsible": false,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção é possível encontrar a Análise de Impacto Ético."
+    }
+  }
