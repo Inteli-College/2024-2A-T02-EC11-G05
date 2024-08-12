@@ -1,0 +1,11 @@
+{
+    "position": 4,
+    "label": "Análise Financeira",
+    "collapsible": false,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontra-se a Análise Financeira."
+    }
+  }

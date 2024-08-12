@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Grupo1",
+  title: "Grupo5",
   tagline: "Dinosaurs are cool",
   favicon: "img/inteli.svg",
 
@@ -60,8 +60,8 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/inteli.svg",
-      navbar: {
-        title: "Grupo5 - Carbon Cheack",
+      navbar: {        
+        title: "Grupo5",
         logo: {
           alt: "My Site Logo",
           src: "img/inteli.svg",
