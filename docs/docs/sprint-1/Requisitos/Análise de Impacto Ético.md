@@ -8,6 +8,7 @@ sidebar_position: 4
 
 Introdução dos requisitos funcionais.
 
+
 | ID   | REQUISITO                                                                                                                  | CLASSIFICAÇÃO |
 | ---- | -------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | RF01 | Visualizar a imagem escolhida para classificação antes de qualquer computação;                                         | Essencial       |
@@ -24,6 +25,20 @@ Introdução dos requisitos funcionais.
 ## Requisitos funcionais:
 
 Introdução dos requisitos não funcionais.
+
+
+| ID    | REQUISITO                                                                                                                           | CLASSIFICAÇÃO |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| RNF01 | Todo o sistema deve operar de forma embarcada;                                                                                      | Essencial       |
+| RNF02 | Admitir imagens de diversas fontes (drones, satélite, etc);                                                                        | Essencial       |
+| RNF03 | Possuir sistema de upload de imagens via ícone ou drag and drop;                                                                   | Desejável      |
+| RNF04 | Gerar as classificações, métricas e suas derivadas em um tempo inferior a 5 minutos;                                             | Desejável      |
+| RNF05 | Possuir design de desenvolvimento modularizado de forma a permitir a fácil atualização do modelo escolhido para classificação; | Desejável      |
+| RNF06 | Operar continuamente;                                                                                                               | Essencial       |
+| RNF07 | Gerenciar um grande volume de imagens;                                                                                              | Desejável      |
+| RNF08 | ...                                                                                                                                 |                 |
+| RNF09 | ...                                                                                                                                 |                 |
+| RNF10 | ...                                                                                                                                 |                 |
 
 ## **Conclusão**
 
