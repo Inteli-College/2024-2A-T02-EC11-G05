@@ -35,7 +35,7 @@ Este repositório contém várias pastas e arquivos importantes. Aqui está um r
 
 - README.md: Este arquivo serve como um guia e explicação geral sobre o projeto. É o documento que você está lendo agora.
 
-- docs: Neste diretório há toda a documentação do desenvolvimento do projeto e outros arquivos relacionados a documentação. Para acessar clique [aqui](https://inteli-college.github.io/2024-1B-T02-EC11-G05/)
+- docs: Neste diretório há toda a documentação do desenvolvimento do projeto e outros arquivos relacionados a documentação. Para acessar clique [aqui](https://inteli-college.github.io/2024-2A-T02-EC11-G05/)
 
 
 - .gitignore: Arquivo utilizado para especificar quais arquivos ou diretórios o Git deve ignorar. -->
@@ -49,7 +49,7 @@ A estrutura acima é projetada para manter o projeto organizado e fácil de nave
 <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://inteli-college.github.io/2024-1B-T02-EC11-G05/">Inteli,Antônio Ribeiro,Henrique Agostinho Schilder Lima, Eduardo França Porto, Alysson C. C. Cordeiro, Luiz Fernando, Dani, Gabriel Pascoli</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>. <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"></p>
 
 ## Documentação
-Para acessar a documentação do projeto, digite estes comandos ou [aqui](https://inteli-college.github.io/2024-1B-T02-EC11-G05/):
+Para acessar a documentação do projeto, digite estes comandos ou [aqui](https://inteli-college.github.io/2024-2A-T02-EC11-G05/):
 
 
 ```bash
