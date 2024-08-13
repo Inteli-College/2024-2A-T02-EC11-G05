@@ -33,6 +33,14 @@ O projeto proposto para a Abundance Brasil envolve o desenvolvimento de um model
   - **Discriminação entre Espécies:** O modelo deve ser treinado para reconhecer diferentes espécies de árvores com precisão. Caso contrário, pode haver uma sub-representação de certas espécies, afetando a biodiversidade e a gestão ambiental.
   
   - **Viés nos Dados:** Se o modelo for treinado com dados que não representem adequadamente a diversidade de condições ambientais (como variações sazonais ou regionais), ele pode falhar em fornecer contagens precisas em todas as situações, comprometendo a eficácia do projeto.
+    
+## **Privacidade e proteção de dados**
+
+Privacidade e proteção de dados são fundamentais em qualquer tecnologia que manipule informações sensíveis. Esse tópico abrange práticas para garantir que dados sejam coletados, armazenados e processados de forma segura e em conformidade com leis como a LGPD, protegendo os direitos dos indivíduos.
+
+- **Coleta e Uso de Dados Pessoais:** O projeto não envolve a coleta, armazenamento, ou uso direto de dados pessoais. O foco da tecnologia está na contagem de árvores através de imagens de satélite e drones, que são dados de natureza ambiental e não pessoal.
+  
+- **Justificativa para a Categorização como Dados Não Pessoais:** As imagens utilizadas contêm apenas informações ambientais, como a localização e a quantidade de árvores em áreas florestais. Essas imagens são processadas para identificar e contar árvores, sem a possibilidade de identificar indivíduos ou coletar informações que possam ser vinculadas a uma pessoa física. Dessa forma, a tecnologia é categorizada como não pessoal, já que os dados tratados não têm qualquer relação com a privacidade de indivíduos.
 
 ## **Equidade e Justiça**
 
@@ -43,6 +51,14 @@ A equidade e a justiça são princípios fundamentais que devem ser considerados
 - **Justiça Distributiva:** É necessário assegurar que os lucros e benefícios gerados pelo projeto, como a venda de créditos de carbono, sejam distribuídos de maneira justa. Comunidades locais que participam da conservação florestal devem ser devidamente compensadas por seus esforços, evitando a concentração de benefícios apenas nas mãos de grandes empresas ou investidores.
 
 - **Consulta e Participação Comunitária:** O desenvolvimento e a implementação do projeto devem incluir consultas e participação ativa das comunidades locais e dos povos indígenas. Isso garante que suas vozes sejam ouvidas e que suas necessidades e direitos sejam respeitados. A justiça social requer que essas comunidades tenham um papel central na tomada de decisões que afetam suas terras e meios de subsistência.
+
+## **Transparência e consentimento informado**
+
+Transparência e consentimento informado asseguram que todos os envolvidos conheçam como seus dados são utilizados e tenham dado sua permissão de forma consciente. Esses princípios são essenciais para manter a confiança e a conformidade legal em qualquer projeto tecnológico.
+
+- **Acesso às Informações Relevantes:** Todas as partes envolvidas no desenvolvimento e implementação do projeto, incluindo os estudantes do Inteli, o time técnico da Abundance Brasil, e outros stakeholders, têm acesso claro às informações relevantes para a execução da tecnologia. Isso inclui detalhes sobre o uso das imagens de satélite, a metodologia aplicada, e os resultados esperados.
+
+- **Consentimento e Conformidade:** Embora o projeto não lide diretamente com dados pessoais, é essencial garantir que o uso das imagens de satélite e drones seja feito de maneira ética e legal. A Abundance Brasil se compromete a obter todas as permissões necessárias para a utilização dessas imagens, assegurando que estão em conformidade com as regulamentações aplicáveis, como as leis de proteção de dados e de propriedade intelectual. O consentimento é obtido de acordo com as normas estabelecidas, especialmente no que tange ao uso das imagens para fins de monitoramento ambiental.
 
 ## **Responsabilidade Social**
 
