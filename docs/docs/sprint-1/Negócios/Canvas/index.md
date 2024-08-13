@@ -10,10 +10,6 @@ O canvas de proposta de valor é uma ferramenta visual que ajuda a definir e com
 
 Assim, com o objetivo de desenvolver uma solução para a Abundance que conta o número de árvores em um terreno para melhorar o cálculo dos créditos de carbono gerados em uma área de floresta plantada foi pensado o seguinte canvas proposta de valor.
 
-![Canvas ](../../assets/sprint-1/canvas.jpg)
+![Canvas ](../../../assets/sprint-1/canvas.jpg)
 
-Na figura acima, do lado esquerdo temos o produto e suas características e do lado direito há o consumidor. Assim, com a dor de saber quantas árvores existem em um talhão a solução que esta sendo desenvolvida tem o foco de contar árvores em uma região específica. 
-
-https://miro.com/app/board/uXjVK7_LGM8=/?share_link_id=595348507280
-
-https://miro.com/welcomeonboard/eXhwbEVSSFVMdE1OMGdvY3BSRXlBOEdGRzNDWVVEbXZuMlZGbXBta3hwTEEzUENNRnppNkJGS1QwcjhuT1ZZYXwzNDU4NzY0NTE4OTk5NDI0NDgzfDI=?share_link_id=510029051515
+Na figura acima, do lado esquerdo temos o produto e suas características e do lado direito há o consumidor. Assim, a solução em desenvolvimento visa resolver a dor de saber quantas árvores existem em um talhão, focando na contagem precisa de árvores em uma região específica.

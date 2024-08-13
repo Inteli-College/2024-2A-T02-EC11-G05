@@ -1,7 +1,7 @@
 {
     "position": 3,
     "label": "Negócios",
-    "collapsible": false,
+    "collapsible": true,
     "collapsed": true,
     "className": "red",
     "link": {
