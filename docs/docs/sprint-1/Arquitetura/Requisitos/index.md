@@ -1,13 +1,14 @@
 ---
 title: Resquisitos
-sidebar_position: 1
+sidebar_position: 4
 ---
 # **Requisitos funcionais e não funcionais**
 
-## **Requisitos funcionais:**
+Este documento descreve os requisitos funcionais e não funcionais do projeto de contagem de árvores utilizando visão computacional, embarcado em dispositivos de edge computing, desenvolvido para a Abundance Brasil. O objetivo principal do projeto é criar uma solução eficiente e escalável para monitoramento e quantificação de árvores, contribuindo para a certificação de créditos de carbono.
 
-Introdução dos requisitos funcionais.
+Os requisitos funcionais abrangem as funcionalidades essenciais que o sistema deve possuir para atender às necessidades da Abundance, incluindo a capacidade de detectar, classificar e extrair métricas relevantes. Já os requisitos não funcionais especificam as qualidades desejadas do sistema, como desempenho, confiabilidade, velocidade e disponibilidade, assegurando que a solução seja robusta e capaz de operar em ambientes de produção sob diversas condições.
 
+# **Requisitos funcionais**
 
 | ID   | REQUISITO                                                                                                                  | CLASSIFICAÇÃO |
 | ---- | -------------------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -19,13 +20,10 @@ Introdução dos requisitos funcionais.
 | RF06 | Gerar e exibir representações gráficas das estatísticas geradas como sobreposição da imagem originalmente carregada; | Desejável      |
 | RF07 | Salvar todas as imagens geradas, bem como suas métricas e derivadas;                                                      | Essencial       |
 | RF08 | Permitir que o usuário altere a imagem que selecionou, caso tenha selecionado-a por engano;                               | Essencial       |
-| RF09 | ...                                                                                                                        |                 |
-| RF10 | ...                                                                                                                        |                 |
+| RF09 | A precisão da detecção de cada árvore deve ser maior ou igual a 90%.                                                   | Essencial       |
+| RF10 | Possuir design de software modularizado para alteração do modelo de reconhecimento de árvores.                          | Essencial       |
 
-## Requisitos funcionais:
-
-Introdução dos requisitos não funcionais.
-
+## Requisitos não funcionais:
 
 | ID    | REQUISITO                                                                                                                           | CLASSIFICAÇÃO |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -35,11 +33,9 @@ Introdução dos requisitos não funcionais.
 | RNF04 | Gerar as classificações, métricas e suas derivadas em um tempo inferior a 5 minutos;                                             | Desejável      |
 | RNF05 | Possuir design de desenvolvimento modularizado de forma a permitir a fácil atualização do modelo escolhido para classificação; | Desejável      |
 | RNF06 | Operar continuamente;                                                                                                               | Essencial       |
-| RNF07 | Gerenciar um grande volume de imagens;                                                                                              | Desejável      |
-| RNF08 | ...                                                                                                                                 |                 |
-| RNF09 | ...                                                                                                                                 |                 |
-| RNF10 | ...                                                                                                                                 |                 |
+| RNF07 | Ser capaz de processar um grande volume de imagens (>100), sequenciamente;                                                          | Desejável      |
+| RNF08 | Manter a identificação de árvores para extração das métricas supracitadas em imagens de média qualidade.                     | Desejável      |
 
 ## **Conclusão**
 
-Conclusão dos requisitos funcionais e não funcionais
+Com o estabelecimento dos requisitos funcionais e não funcionais desde o início de um projeto é possível garantir que o desenvolvimento do grupo siga uma direção clara e alinhada com os objetivos da Abundance Brasil. Esses requisitos servem como um guia para todas as etapas subsequentes, desde o design até a implementação e testes, assegurando que o sistema final atenda às expectativas de desempenho, confiabilidade e qualidade. Além disso, uma definição clara de requisitos minimiza riscos, facilita a comunicação entre as equipes e stakeholders, e contribui para o sucesso do projeto como um todo.
