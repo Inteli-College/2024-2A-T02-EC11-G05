@@ -46,6 +46,8 @@ const config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           routeBasePath: "/",
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
         },
         blog: false,
         theme: {
@@ -85,6 +87,15 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-3LrX4zKD04cnZIFVZfEDP3mCwX5Zx4QKD3z+cdXB3LIA3VJzTktp1nI5H5MLE4F5',
+      crossorigin: 'anonymous',
+    },
+  ],
 };
 
 export default config;
