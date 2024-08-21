@@ -1,5 +1,5 @@
 ---
-title: Resquisitos
+title: Requisitos
 sidebar_position: 4
 ---
 # **Requisitos funcionais e não funcionais**
