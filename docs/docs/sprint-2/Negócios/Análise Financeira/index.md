@@ -182,28 +182,29 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
 
 #### 3.3 **Cálculo de ROI**
 
-O ROI (Retorno sobre Investimento) é uma métrica financeira que mede a eficácia de um investimento, calculada como a diferença entre o ganho obtido com o investimento e o custo do investimento, dividida pelo custo do investimento. A fórmula para calcular o ROI é:
+O ROI (Retorno sobre Investimento) é uma métrica financeira que mede a eficácia de um investimento, calculada como a diferença entre o ganho obtido com o investimento e o custo do investimento, dividida pelo custo do investimento.
+
+A fórmula para calcular o ROI é:
 
 $$
-ROI = \frac{\text{Lucro Total} - \text{Custo Total}}{\text{Custo Total}} \times 100
+\begin{align*}
+ROI &= \frac{\text{Lucro Total} - \text{Custo Total}}{\text{Custo Total}} \times 100 \\
+\end{align*}
 $$
+Substituindo os valores: 
 
 $$
-ROI = \frac{R\$17.500.000 - R\$2.644.000}{R\$2.644.000} \times 100
+\begin{align*}
+ROI &= \frac{R\$ 17{,}500{,}000 - R\$ 2{,}644{,}000}{R\$ 2{,}644{,}000} \times 100 \\
+\\
+ROI &= \frac{R\$ 14{,}856{,}000}{R\$ 2{,}644{,}000} \times 100 \\
+\\
+ROI &\approx 562{,}1\%
+\end{align*}
 $$
 
-$$
-ROI = \frac{R\$14.856.000}{R\$2.644.000} \times 100
-$$
-
-$$
-\text{ROI} \approx 562.1\%
-$$
 Esse resultado indica que, para cada real investido no projeto, a Abundance pode esperar um retorno de 562.1%, além do valor originalmente investido. Este é um ROI muito alto, sugerindo que o projeto tem um excelente potencial de retorno financeiro, superando significativamente os custos de implementação.
-
 
 ### Conclusão
 
-A análise financeira sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais.
-Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente onde o sistema será implementado. Para uma análise mais precisa, seria ideal conduzir um estudo de viabilidade detalhado e consultar fornecedores de serviços de TI, desenvolvedores de software e especialistas em segurança da informação.
-Todas as estimativas foram baseadas em suposições gerais e devem ser ajustadas conforme dados específicos e análises detalhadas durante a implementação e operação do projeto.
+A análise financeira sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais. Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente onde o sistema será implementado. Para uma análise mais precisa, seria ideal conduzir um estudo de viabilidade detalhado e consultar fornecedores de serviços de TI, desenvolvedores de software e especialistas em segurança da informação. Todas as estimativas foram baseadas em suposições gerais e devem ser ajustadas conforme dados específicos e análises detalhadas durante a implementação e operação do projeto.
