@@ -4,6 +4,8 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 import { themes as prismThemes } from "prism-react-renderer";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Grupo5",
@@ -34,6 +36,8 @@ const config = {
       ({
         docs: {
           sidebarPath: "./sidebars.js",
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -78,8 +82,15 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+    stylesheets: [
+      {
+        href: '/katex/katex.min.css',
+        type: 'text/css',
+      },
+    ],
+  };
+  
 
   
-};
 
 export default config;

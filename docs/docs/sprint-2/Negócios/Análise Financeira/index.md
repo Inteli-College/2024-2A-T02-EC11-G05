@@ -180,6 +180,28 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
 
 - **Lucro Total Estimado após 1 Ano:** R$ 17.500.000
 
+#### 3.3 **Cálculo de ROI**
+
+O ROI (Retorno sobre Investimento) é uma métrica financeira que mede a eficácia de um investimento, calculada como a diferença entre o ganho obtido com o investimento e o custo do investimento, dividida pelo custo do investimento. A fórmula para calcular o ROI é:
+
+$$
+ROI = \frac{\text{Lucro Total} - \text{Custo Total}}{\text{Custo Total}} \times 100
+$$
+
+$$
+ROI = \frac{R\$17.500.000 - R\$2.644.000}{R\$2.644.000} \times 100
+$$
+
+$$
+ROI = \frac{R\$14.856.000}{R\$2.644.000} \times 100
+$$
+
+$$
+\text{ROI} \approx 562.1\%
+$$
+Esse resultado indica que, para cada real investido no projeto, a Abundance pode esperar um retorno de 562.1%, além do valor originalmente investido. Este é um ROI muito alto, sugerindo que o projeto tem um excelente potencial de retorno financeiro, superando significativamente os custos de implementação.
+
+
 ### Conclusão
 
 A análise financeira sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais.
