@@ -1,0 +1,12 @@
+train: ../train/images
+val: ../valid/images
+
+nc: 1
+names: ['crown']
+
+roboflow:
+  workspace: huazhong
+  project: forest-eadtj
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/huazhong/forest-eadtj/dataset/1
