@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['Building', 'Field', 'Forest', 'Grass', 'Power line', 'Road', 'Water']
+
+roboflow:
+  workspace: myproject-gccot
+  project: landscape-segmentation
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/myproject-gccot/landscape-segmentation/dataset/5
