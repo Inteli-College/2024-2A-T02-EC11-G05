@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: /home/turma2-ec/2024-2A-T02-EC11-G05/src/modelos/yolo_model/trainnig/dataset/train/images
+val: /home/turma2-ec/2024-2A-T02-EC11-G05/src/modelos/yolo_model/trainnig/dataset/valid/images
+
 
 nc: 7
 names: ['Building', 'Field', 'Forest', 'Grass', 'Power line', 'Road', 'Water']
