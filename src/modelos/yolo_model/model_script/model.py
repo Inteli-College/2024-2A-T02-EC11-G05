@@ -6,7 +6,7 @@ from ultralytics import YOLO
 model = YOLO('best.pt')
 
 # Caminho do arquivo (pode ser vídeo ou foto)
-file_path = "./img/view/vid2.MOV"
+file_path = "./img/view/imaa.jpeg"
 
 # Cria a pasta 'result' se não existir
 output_dir = "./img/result/vid"
