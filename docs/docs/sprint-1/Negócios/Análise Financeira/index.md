@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 ## Análise Financeira
 
-Esta análise transcende a esfera numérica para questionar como o investimento em inovação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao paciente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da ecologia. Não apenas um objetivo financeiro; mas um passo fundamental na jornada contínua de inovação e melhoria no cuidado ao meio ambiente, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar do paciente.
+Esta análise transcende a esfera numérica para questionar como o investimento em inovação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao meio-ambiente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da ecologia. Não apenas um objetivo financeiro; mas um passo fundamental na jornada contínua de inovação e melhoria no cuidado ao meio-ambiente, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar da ordem natural.
 Valores estimados em USD. Dados acessados em Agosto de 2024.
 
 ### 1. **Custos Estimados**
@@ -73,5 +73,5 @@ Valores estimados em USD. Dados acessados em Agosto de 2024.
 ### Conclusão
 
 A análise financeira preliminar sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais.
-Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente hospitalar onde o sistema será implementado. Para uma análise mais precisa, seria ideal conduzir um estudo de viabilidade detalhado e consultar fornecedores de serviços de TI, desenvolvedores de software e especialistas em segurança da informação.
-Todas as estimativas foram baseadas em suposições gerais e devem ser ajustadas conforme dados específicos do hospital e análises detalhadas durante a implementação e operação do projeto.
+Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente onde o sistema será implementado. Para uma análise mais precisa, seria ideal conduzir um estudo de viabilidade detalhado e consultar fornecedores de serviços de TI, desenvolvedores de software e especialistas em segurança da informação.
+Todas as estimativas foram baseadas em suposições gerais e devem ser ajustadas conforme dados específicos da Abundance e análises detalhadas durante a implementação e operação do projeto.
