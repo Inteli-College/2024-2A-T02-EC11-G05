@@ -39,19 +39,12 @@ if file_path.lower().endswith(('.mp4', '.mov', '.avi', '.mkv', '.flv', '.wmv')):
 
             # Escreve o frame anotado no vídeo de saída
             out.write(annotated_frame)
-            
-            # Mostra o frame anotado na tela
-            cv2.imshow("Annotated Frame", annotated_frame)
-
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
         else:
             break
 
     # Libera os recursos
     cap.release()
     out.release()
-    cv2.destroyAllWindows()
 
 elif file_path.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff')):
     # É uma foto
@@ -66,11 +59,6 @@ elif file_path.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff')):
     # Salva a imagem anotada na pasta 'result'
     output_path = os.path.join(output_dir, "annotated_image.jpg")
     cv2.imwrite(output_path, annotated_image)
-
-    # Mostra a imagem anotada na tela
-    cv2.imshow("Annotated Image", annotated_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
 
 else:
     print("Formato de arquivo não suportado. Por favor, forneça um vídeo ou uma imagem.")
