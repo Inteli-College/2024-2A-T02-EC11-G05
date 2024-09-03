@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
-import {Grid, Button, Stack} from '@mui/material';
+import {Button, Stack} from '@mui/material';
 import localCloud from './cloudIcon.svg'
+import Grid from '@mui/material/Grid2';
+
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import CompareIcon from '@mui/icons-material/Compare';
 
 import CompareImgComponent from '../components/CompareImgComponent';
+
+import TreeINumber from '../components/TreeINumber';
+import TrustComponent from '../components/TrustComponent';
 
 
 
@@ -23,14 +28,13 @@ const DashboardPage: React.FC = () => {
     <div>
       <h1>Dashboard</h1>
     <Grid container spacing={2}>
-    <Grid item xs={6}>
-      <p>Intervalo de confiabilidade</p>
+    <Grid size={6}>
+    <TrustComponent percentage={85} startYear={1903} endYear={2050} />
     </Grid>
-    <Grid item xs={6}>
-      <p>Número total de árvores</p>
+    <Grid size={6}>
+    <TreeINumber totalTrees={1984} />
     </Grid>
     </Grid>
-    <span>https://youtu.be/xs6loKKgWCY?t=947</span>
     <Stack direction="row" spacing={8}>
       <Button variant="outlined" color="success" startIcon={<CloudUploadIcon/>}>
         Inserir imagem
@@ -43,8 +47,9 @@ const DashboardPage: React.FC = () => {
         
       </Button>
       <CompareImgComponent open={open} handleClose={handleClose} />
-
     </Stack>
+    <span>https://youtu.be/xs6loKKgWCY?t=947</span>
+
     </div>
     
   );
