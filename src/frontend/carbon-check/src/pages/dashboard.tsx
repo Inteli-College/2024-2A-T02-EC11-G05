@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Stack} from '@mui/material';
+import {Button, Stack, Box} from '@mui/material';
 import localCloud from './cloudIcon.svg'
 import Grid from '@mui/material/Grid2';
 
@@ -9,7 +9,7 @@ import CompareIcon from '@mui/icons-material/Compare';
 
 import CompareImgComponent from '../components/CompareImgComponent';
 
-import TreeINumber from '../components/TreeINumber';
+import TreeNumber from '../components/TreeNumber';
 import TrustComponent from '../components/TrustComponent';
 
 
@@ -27,27 +27,33 @@ const DashboardPage: React.FC = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-    <Grid container spacing={2}>
-    <Grid size={6}>
+    <Grid container spacing={1}>
+    <Grid size={5} offset={{ md: 2 }}>
     <TrustComponent percentage={85} startYear={1903} endYear={2050} />
     </Grid>
-    <Grid size={6}>
-    <TreeINumber totalTrees={1984} />
+    <Grid size={5}>
+    <TreeNumber totalTrees={1984} />
     </Grid>
     </Grid>
-    <Stack direction="row" spacing={8}>
-      <Button variant="outlined" color="success" startIcon={<CloudUploadIcon/>}>
-        Inserir imagem
-      </Button>
-      <Button variant="outlined" startIcon={<AnalyticsIcon />}>
-        Analisar terreno
-      </Button>
-      <Button onClick={handleOpen} variant="outlined" startIcon={<CompareIcon/>} >
-        Comparar imagens
-        
-      </Button>
-      <CompareImgComponent open={open} handleClose={handleClose} />
-    </Stack>
+    <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="20vh" 
+      >
+        <Stack direction="row" spacing={8}>
+          <Button variant="outlined" color="success" startIcon={<CloudUploadIcon />}>
+            Inserir imagem
+          </Button>
+          <Button variant="outlined" startIcon={<AnalyticsIcon />}>
+            Analisar terreno
+          </Button>
+          <Button onClick={handleOpen} variant="outlined" startIcon={<CompareIcon />}>
+            Comparar imagens
+          </Button>
+          <CompareImgComponent open={open} handleClose={handleClose} />
+        </Stack>
+      </Box>
     <span>https://youtu.be/xs6loKKgWCY?t=947</span>
 
     </div>
