@@ -23,6 +23,31 @@ const DashboardPage: React.FC = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // Rota para enviar a imagem pro backend
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await fetch('http://127.0.0.1:8000/upload', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          console.log('File uploaded successfully');
+        } else {
+          console.error('File upload failed');
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+  };
+
+
 
   return (
     <div>
@@ -42,9 +67,12 @@ const DashboardPage: React.FC = () => {
         height="20vh" 
       >
         <Stack direction="row" spacing={8}>
-          <Button variant="outlined" color="success" startIcon={<CloudUploadIcon />}>
-            Inserir imagem
+          <Button  variant="outlined" color="success" startIcon={<CloudUploadIcon />}>
+          <label htmlFor="upload-input" style={{ cursor: 'pointer' }}>
+              Inserir imagem
+            </label>
           </Button>
+          <input id="upload-input" type="file" style={{ display: 'none' }} onChange={handleFileUpload} />
           <Button variant="outlined" startIcon={<AnalyticsIcon />}>
             Analisar terreno
           </Button>
