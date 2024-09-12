@@ -1,5 +1,5 @@
 ---
-title: Análise Financeira V2
+title: Análise Financeira 
 sidebar_position: 2
 ---
 
@@ -15,16 +15,16 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
 - **Desenvolvimento do Modelo de Deep Learning:**  
   - **Custo de Engenheiros de Machine Learning:**
     - 2 engenheiros sêniores, 12 meses, salário mensal de R$ 20.000.
-    - **Custo:** R 480.000 (2 engenheiros x R$ 20.000/mês x 12 meses).
+    - Custo: BRL 480.000 (2 engenheiros x R$ 20.000 mês x 12 meses).
   - **Custo de Cientistas de Dados:**
     - 1 cientista de dados, 12 meses, salário mensal de R$ 18.000.
-    - **Custo:** R$ 216.000 (1 cientista x R$ 18.000/mês x 12 meses).
+    - **Custo:** BRL 216.000 (1 cientista x R$ 18.000/mês x 12 meses).
   - **Custo de Desenvolvedores de Software:**
     - 2 desenvolvedores, 12 meses, salário mensal de R$ 15.000.
-    - **Custo:** R$ 360.000 (2 desenvolvedores x R$ 15.000/mês x 12 meses).
+    - **Custo:** BRL 360.000 (2 desenvolvedores x R$ 15.000/mês x 12 meses).
   - **Ferramentas e Licenças de Software:**
     - Licenças de software de machine learning, bibliotecas de deep learning e IDEs.
-    - **Custo:** R$ 60.000.
+    - **Custo:** BRL 60.000.
 
 - **Custo Total de Desenvolvimento:** **R$ 1.116.000**
 
@@ -70,7 +70,7 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
   - **Custo:** R$ 100.000 (estimativa anual).
 - **Salários de Operação e Suporte:**
   - 2 técnicos de operação e suporte, salário mensal de R$ 12.000.
-  - **Custo:** R$ 288.000 (2 técnicos x R$ 12.000/mês x 12 meses).
+  - **Custo:** BRL 288.000 (2 técnicos x R$ 12.000/mês x 12 meses).
 
 - **Custo Total de Operação e Manutenção:** **R$ 508.000**
 
@@ -105,11 +105,11 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
 - **Venda de Árvores Tokenizadas:**
   - **Estimativa de Árvores Vendidas:** Supondo que a Abundance Brasil consiga vender tokens referentes a 100.000 árvores no primeiro ano.
   - **Preço Médio por Árvore Tokenizada:** R$ 50 por árvore.
-  - **Receita Gerada:** R$ 5.000.000 (100.000 árvores x R$ 50).
+  - **Receita Gerada:** BRL 5.000.000 (100.000 árvores x R$ 50).
 - **Venda de Créditos de Carbono Adicionais:**
   - **Estimativa de Créditos Vendidos:** Aproximadamente 10.000 toneladas de carbono tokenizadas.
   - **Preço Médio por Crédito de Carbono:** R$ 200 por tonelada.
-  - **Receita Gerada:** R$ 2.000.000 (10.000 toneladas x R$ 200).
+  - **Receita Gerada:** BRL 2.000.000 (10.000 toneladas x R$ 200).
 
 - **Receita Total com Venda de Créditos de Carbono:** **R$ 7.000.000**
 
@@ -119,13 +119,13 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
   - **Clientes Corporativos:** Organizações que necessitam de monitoramento contínuo de grandes áreas florestais.
   - **Número Estimado de Clientes:** 10 grandes clientes corporativos.
   - **Preço Médio por Serviço de Monitoramento Anual:** R$ 300.000 por cliente.
-  - **Receita Gerada:** R$ 3.000.000 (10 clientes x R$ 300.000).
+  - **Receita Gerada:** BRL 3.000.000 (10 clientes x R$ 300.000).
 
 - **Serviços Adicionais de Relatórios Customizados:**
   - **Clientes:** Empresas que precisam de relatórios detalhados para auditorias ambientais.
   - **Número Estimado de Clientes:** 20 clientes adicionais.
   - **Preço Médio por Relatório Customizado:** R$ 50.000 por relatório.
-  - **Receita Gerada:** R$ 1.000.000 (20 relatórios x R$ 50.000).
+  - **Receita Gerada:** BRL 1.000.000 (20 relatórios x R$ 50.000).
 
 - **Receita Total com Serviços de Monitoramento Ambiental:** **R$ 4.000.000**
 
@@ -135,13 +135,13 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
   - **Licenciamento para Outras Empresas:** Empresas que desejam utilizar o modelo para suas próprias operações de monitoramento.
   - **Número Estimado de Licenças Vendidas:** 5 licenças.
   - **Preço Médio por Licença Anual:** R$ 400.000 por licença.
-  - **Receita Gerada:** R$ 2.000.000 (5 licenças x R$ 400.000).
+  - **Receita Gerada:** BRL 2.000.000 (5 licenças x R$ 400.000).
 
 - **Parcerias Estratégicas:**
   - **Parcerias com Instituições de Pesquisa e Governos:** Colaborações para projetos de pesquisa e conservação.
   - **Número Estimado de Parcerias:** 3 parcerias.
   - **Receita Média por Parceria:** R$ 500.000 por parceria.
-  - **Receita Gerada:** R$ 1.500.000 (3 parcerias x R$ 500.000).
+  - **Receita Gerada:** BRL 1.500.000 (3 parcerias x R$ 500.000).
 
 - **Receita Total com Parcerias e Licenciamento:** **R$ 3.500.000**
 
@@ -151,13 +151,13 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
   - **Serviços de Certificação de Sustentabilidade:** Empresas que buscam certificações baseadas no monitoramento por satélite.
   - **Número Estimado de Empresas Certificadas:** 15 empresas.
   - **Preço Médio por Certificação:** R$ 100.000 por empresa.
-  - **Receita Gerada:** R$ 1.500.000 (15 empresas x R$ 100.000).
+  - **Receita Gerada:** BRL 1.500.000 (15 empresas x R$ 100.000).
 
 - **Consultoria em Sustentabilidade:**
   - **Serviços de Consultoria para Empresas:** Assessoria em estratégias de neutralidade de carbono e sustentabilidade.
   - **Número Estimado de Consultorias:** 10 projetos de consultoria.
   - **Preço Médio por Projeto:** R$ 150.000 por projeto.
-  - **Receita Gerada:** R$ 1.500.000 (10 projetos x R$ 150.000).
+  - **Receita Gerada:** BRL 1.500.000 (10 projetos x R$ 150.000).
 
 - **Receita Total com Iniciativas de Sustentabilidade e Certificações:** **R$ 3.000.000**
 
