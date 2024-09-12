@@ -15,7 +15,7 @@ Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da anális
 - **Desenvolvimento do Modelo de Deep Learning:**  
   - **Custo de Engenheiros de Machine Learning:**
     - 2 engenheiros sêniores, 12 meses, salário mensal de R$ 20.000.
-    - **Custo:** R$ 480.000 (2 engenheiros x R$ 20.000/mês x 12 meses).
+    - **Custo:** R 480.000 (2 engenheiros x R$ 20.000/mês x 12 meses).
   - **Custo de Cientistas de Dados:**
     - 1 cientista de dados, 12 meses, salário mensal de R$ 18.000.
     - **Custo:** R$ 216.000 (1 cientista x R$ 18.000/mês x 12 meses).
@@ -197,7 +197,6 @@ $$
 \begin{align*}
 ROI &= \frac{R\$ 17{,}500{,}000 - R\$ 2{,}644{,}000}{R\$ 2{,}644{,}000} \times 100 \\
 \\
-ROI &= \frac{R\$ 14{,}856{,}000}{R\$ 2{,}644{,}000} \times 100 \\
 \\
 ROI &\approx 562{,}1\%
 \end{align*}
