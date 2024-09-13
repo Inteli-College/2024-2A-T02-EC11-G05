@@ -15,11 +15,23 @@ def pixel_to_meters_squared(area_pixels, pixel_size_meters):
     area_m2 = area_pixels * (pixel_size_meters ** 2)
     return area_m2
 
+# Função para estimar o número de árvores com base nos pixels segmentados
+def estimate_trees(forest_pixels, pixels_per_tree=400):
+    """
+    Estima o número de árvores com base no número de pixels segmentados.
+
+    :param forest_pixels: Número total de pixels segmentados para a classe "Forest"
+    :param pixels_per_tree: Número médio de pixels por árvore (400 por padrão)
+    :return: Número estimado de árvores
+    """
+    estimated_trees = forest_pixels / pixels_per_tree
+    return estimated_trees
+
 # Carregar o modelo
 model = YOLO('./best.pt')
 
 # Carregar a imagem
-image = cv2.imread('./img/view/imaa.jpeg')
+image = cv2.imread('./img/view/img.png')
 
 # Fazer a predição
 results = model(image)
@@ -57,11 +69,15 @@ for result in results:
                 color = np.random.randint(0, 255, (1, 3)).tolist()[0]
                 colored_mask[binary_mask_resized == 1] = color
 
-                image = cv2.addWeighted(image, 0.8, colored_mask, 0.8, 0.8)
+                # Aplicar a máscara colorida diretamente sobre a imagem original sem escurecê-la
+                image[binary_mask_resized == 1] = cv2.addWeighted(image[binary_mask_resized == 1], 0.5, colored_mask[binary_mask_resized == 1], 0.5, 0)
 
                 print(f'A área do objeto segmentado (Forest) é: {area_pixels} pixels')
     else:
         print("Nenhuma máscara encontrada nos resultados.")
+
+# Estimar o número de árvores
+estimated_trees = estimate_trees(forest_pixels)
 
 # Definir o tamanho do pixel em metros (exemplo: 0.01 para 1 cm por pixel)
 pixel_size_meters = 0.01
@@ -69,6 +85,9 @@ pixel_size_meters = 0.01
 # Converter a área total para metros quadrados
 total_area_m2 = pixel_to_meters_squared(forest_pixels, pixel_size_meters)
 print(f'A área total segmentada da classe "Forest" é: {forest_pixels} pixels, ou {total_area_m2:.4f} metros quadrados')
+
+# Exibir a estimativa do número de árvores
+print(f'O número estimado de árvores é: {estimated_trees:.0f}')
 
 # Verificar se o diretório 'img/result' existe, se não, criar o diretório
 output_dir = './img/result'
