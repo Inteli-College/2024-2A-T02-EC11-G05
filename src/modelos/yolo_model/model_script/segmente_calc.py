@@ -16,22 +16,24 @@ def pixel_to_meters_squared(area_pixels, pixel_size_meters):
     return area_m2
 
 # Função para estimar o número de árvores com base nos pixels segmentados
-def estimate_trees(forest_pixels, pixels_per_tree=400):
+def estimate_trees_interval(forest_pixels, pixels_per_tree_min=2000, pixels_per_tree_max=2500):
     """
-    Estima o número de árvores com base no número de pixels segmentados.
+    Estima o número de árvores com base no número de pixels segmentados e retorna um intervalo de confiança.
 
     :param forest_pixels: Número total de pixels segmentados para a classe "Forest"
-    :param pixels_per_tree: Número médio de pixels por árvore (400 por padrão)
-    :return: Número estimado de árvores
+    :param pixels_per_tree_min: Número mínimo de pixels por árvore (100 por padrão)
+    :param pixels_per_tree_max: Número máximo de pixels por árvore (125 por padrão)
+    :return: Intervalo estimado de número de árvores (mínimo, máximo)
     """
-    estimated_trees = forest_pixels / pixels_per_tree
-    return estimated_trees
+    estimated_trees_min = forest_pixels / pixels_per_tree_max
+    estimated_trees_max = forest_pixels / pixels_per_tree_min
+    return estimated_trees_min, estimated_trees_max
 
 # Carregar o modelo
 model = YOLO('./best.pt')
 
 # Carregar a imagem
-image = cv2.imread('./img/view/img.png')
+image = cv2.imread('./img/view/ibira2.png')
 
 # Fazer a predição
 results = model(image)
@@ -76,8 +78,11 @@ for result in results:
     else:
         print("Nenhuma máscara encontrada nos resultados.")
 
-# Estimar o número de árvores
-estimated_trees = estimate_trees(forest_pixels)
+# Estimar o número de árvores com intervalo de confiança
+estimated_trees_min, estimated_trees_max = estimate_trees_interval(forest_pixels)
+
+# Calcular a estimativa central como a média entre o mínimo e o máximo
+estimated_trees_central = (estimated_trees_min + estimated_trees_max) / 2
 
 # Definir o tamanho do pixel em metros (exemplo: 0.01 para 1 cm por pixel)
 pixel_size_meters = 0.01
@@ -86,8 +91,8 @@ pixel_size_meters = 0.01
 total_area_m2 = pixel_to_meters_squared(forest_pixels, pixel_size_meters)
 print(f'A área total segmentada da classe "Forest" é: {forest_pixels} pixels, ou {total_area_m2:.4f} metros quadrados')
 
-# Exibir a estimativa do número de árvores
-print(f'O número estimado de árvores é: {estimated_trees:.0f}')
+# Exibir a estimativa do número de árvores e intervalo de confiança
+print(f'O número estimado de árvores é: entre {estimated_trees_min:.0f} e {estimated_trees_max:.0f}, com uma estimativa central de {estimated_trees_central:.0f} árvores.')
 
 # Verificar se o diretório 'img/result' existe, se não, criar o diretório
 output_dir = './img/result'
