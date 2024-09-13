@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 from ultralytics import YOLO
+import os
 
 # Função que converte área de pixels para metros quadrados
 def pixel_to_meters_squared(area_pixels, pixel_size_meters):
@@ -15,10 +16,10 @@ def pixel_to_meters_squared(area_pixels, pixel_size_meters):
     return area_m2
 
 # Carregar o modelo
-model = YOLO('/content/best.pt')
+model = YOLO('./best.pt')
 
 # Carregar a imagem
-image = cv2.imread('/content/imaa.jpeg')
+image = cv2.imread('./img/view/imaa.jpeg')
 
 # Fazer a predição
 results = model(image)
@@ -26,11 +27,8 @@ results = model(image)
 # Obter os nomes das classes
 class_names = model.names
 
-# Criar uma máscara com o mesmo tamanho da imagem
-masks_image = np.zeros_like(image)
-
-# Inicializar a variável que vai somar todos os pixels identificados
-total_pixels = 0
+# Inicializar a variável que vai somar apenas os pixels da classe "Forest"
+forest_pixels = 0
 
 # Loop pelos resultados
 for result in results:
@@ -41,27 +39,27 @@ for result in results:
         for mask, cls in zip(masks, classes):
             mask = mask.cpu().numpy()
 
-            # Criar uma máscara binária
-            binary_mask = (mask > 0.5).astype(np.uint8)
-            area_pixels = np.sum(binary_mask)  # Calcular a área da máscara em pixels
-
-            # Somar à variável total
-            total_pixels += area_pixels
-
-            # Redimensionar a máscara binária para combinar com o tamanho da imagem original
-            binary_mask_resized = cv2.resize(binary_mask, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST)
-
-            # Criar uma máscara colorida
-            colored_mask = np.zeros_like(image)
-            color = np.random.randint(0, 255, (1, 3)).tolist()[0]
-            colored_mask[binary_mask_resized == 1] = color
-
-            # Combinar a máscara colorida com a imagem de máscaras
-            masks_image = cv2.addWeighted(masks_image, 1, colored_mask, 0.5, 0)
-
-            # Obter o nome da classe
+            # Verificar se a classe é "Forest"
             class_name = class_names[int(cls)]
-            print(f'A área do objeto segmentado ({class_name}) é: {area_pixels} pixels')
+            if class_name == "Forest":
+                # Criar uma máscara binária
+                binary_mask = (mask > 0.5).astype(np.uint8)
+                area_pixels = np.sum(binary_mask)  # Calcular a área da máscara em pixels
+
+                # Somar à variável total de pixels da classe "Forest"
+                forest_pixels += area_pixels
+
+                # Redimensionar a máscara binária para combinar com o tamanho da imagem original
+                binary_mask_resized = cv2.resize(binary_mask, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST)
+
+                # Criar uma máscara colorida
+                colored_mask = np.zeros_like(image)
+                color = np.random.randint(0, 255, (1, 3)).tolist()[0]
+                colored_mask[binary_mask_resized == 1] = color
+
+                image = cv2.addWeighted(image, 0.8, colored_mask, 0.8, 0.8)
+
+                print(f'A área do objeto segmentado (Forest) é: {area_pixels} pixels')
     else:
         print("Nenhuma máscara encontrada nos resultados.")
 
@@ -69,5 +67,22 @@ for result in results:
 pixel_size_meters = 0.01
 
 # Converter a área total para metros quadrados
-total_area_m2 = pixel_to_meters_squared(total_pixels, pixel_size_meters)
-print(f'A área total segmentada é: {total_pixels} pixels, ou {total_area_m2:.4f} metros quadrados')
+total_area_m2 = pixel_to_meters_squared(forest_pixels, pixel_size_meters)
+print(f'A área total segmentada da classe "Forest" é: {forest_pixels} pixels, ou {total_area_m2:.4f} metros quadrados')
+
+# Verificar se o diretório 'img/result' existe, se não, criar o diretório
+output_dir = './img/result'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Salvar a imagem resultante com as máscaras sobrepostas
+output_path = os.path.join(output_dir, 'result_forest.png')
+cv2.imwrite(output_path, image)
+print(f'Imagem com as máscaras da classe "Forest" salva em: {output_path}')
+
+# Exibir a imagem resultante
+cv2.imshow('Resultado', image)
+
+# Aguardar até que qualquer tecla seja pressionada para fechar a janela
+cv2.waitKey(0)
+cv2.destroyAllWindows()
