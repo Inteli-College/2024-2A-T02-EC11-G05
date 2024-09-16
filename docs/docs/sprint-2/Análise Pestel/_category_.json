@@ -1,11 +1,11 @@
 {
     "position": 2,
-    "label": "Negócios",
+    "label": "Análise PESTEL",
     "collapsible": true,
     "collapsed": true,
     "className": "red",
     "link": {
       "type": "generated-index",
-      "description": "Nesta secção encontram-se todos os artefatos relacionados a Negócios."
+      "description": "Nesta secção encontram-se todos os artefatos relacionados a Análise PESTEL."
     }
   }

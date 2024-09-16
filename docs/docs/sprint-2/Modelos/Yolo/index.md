@@ -52,8 +52,8 @@ O modelo apresentou uma boa identificação e segmentação visual.
 
 Agora, realizamos o mesmo teste utilizando o mesmo script, mas com um vídeo.
 
-<iframe src="https://drive.google.com/file/d/1frLU4w3Txoz6pqElok0DcsMZXF25aKW2/view?usp=sharing" width="640" height="480" allow="autoplay"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ofJtLonEPzA?si=sLl2jqDqe10iecS6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 O segundo vídeo apresentou mais dificuldades na segmentação devido à angulação do drone. Este teste foi realizado propositalmente para avaliar as capacidades reais do modelo.
 
-<iframe src="https://drive.google.com/file/d/1TwqysUbataiAYWF407BTC_k0hn8a7Er_/view?usp=sharing" width="640" height="480" allow="autoplay"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ncu7SWArS9w?si=U9SSy7urY1NnxEdO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
