@@ -64,7 +64,20 @@ Esses itens fazem parte das entregas planejadas e visam aprimorar a estrutura e 
 
 ### Sprint 3:
 
-<a href="https://www.imagensanimadas.com/cat-em-construcao-695.htm"><img src="https://www.imagensanimadas.com/data/media/695/em-construcao-imagem-animada-0050.gif" border="0" alt="em-construcao-imagem-animada-0050" /></a>
+Na terceira sprint do projeto, tivemos como principal objetivo melhoramento do modelo, avaliação das métricas do modelo, integração com o sistema de edge computing e desenvolvimento de mais features do frontend. 
+
+Assim, conseguimos avançar bastante em relação a todos os aspectos da integração do modelo de IA e o sistema de edge computing. Além disso, desenvolvemos as mais diversas secções da documentação sobre os assuntos desenvolvidos na semana. 
+
+  <iframe loading="lazy" 
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGQjEX-u2o&#x2F;Sri8iwuIuKGRTr2t3nDBWA&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+
+  Na próxima sprint, o objetivo é: 
+  - Terminar a análise financeira
+  - Otimizar o sistema embarcado e definir o modelo final
+  - Terminar o frontend 
+  - Integração da plataforma web com o sistema edge
+  
 
 ### Sprint 4:
 
