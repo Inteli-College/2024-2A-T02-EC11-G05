@@ -38,7 +38,29 @@ Na próxima sprint, a equipe desenvolverá o primeiro modelo do frontend, um moc
 
 ### Sprint 2:
 
-<a href="https://www.imagensanimadas.com/cat-em-construcao-695.htm"><img src="https://www.imagensanimadas.com/data/media/695/em-construcao-imagem-animada-0050.gif" border="0" alt="em-construcao-imagem-animada-0050" /></a>
+Na segunda sprint do projeto, a equipe deu continuidade ao desenvolvimento com foco na construção e refinamento de elementos essenciais para o sucesso da solução. Um dos principais destaques foi a criação de três modelos de visão computacional: Template Matching, DeepForest e YOLO - Instance Segmentation. Cada um desses modelos foi implementado com técnicas avançadas para garantir precisão e eficiência no processo de detecção e contagem de árvores, que é o objetivo central da solução.
+
+Além disso, houve o refinamento da documentação, assegurando que todos os artefatos de desenvolvimento estivessem devidamente detalhados e atualizados. A equipe também elaborou o wireframe da solução, proporcionando uma visão clara de como será a interface da aplicação e como os usuários irão interagir com o sistema. Esse wireframe servirá como base para o desenvolvimento da interface nas próximas etapas.
+
+Outro ponto importante foi a realização de uma análise PESTEL, onde foram avaliados os fatores políticos, econômicos, sociais, tecnológicos, ambientais e legais que podem impactar a implementação e o sucesso da solução. Essa análise fornece insights valiosos para mitigar riscos e garantir a sustentabilidade do projeto a longo prazo.
+
+Com essas atividades, a equipe não só avançou no desenvolvimento técnico, mas também consolidou a base estratégica e operacional para as próximas sprints, garantindo que a solução estará alinhada aos objetivos técnicos e de negócio.
+
+<iframe loading="lazy"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGPOw5NyYI&#x2F;N5JTtp2avrtdOjZ6zUiu-g&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+</iframe>
+
+
+Na próxima sprint, a equipe irá focar nos seguintes desenvolvimentos e revisões para o projeto:
+
+- Revisão da Matriz de Risco.
+- Revisão da Análise Financeira, incluindo a análise de custos com contrato de nuvem e embarcado.
+- Definição das condições de implementação, com a entrega do modelo e dashboard.
+- Integração com o sistema Edge, rodando no Raspberry.
+- Implementação do frontend com landing page e dashboard.
+- Estudo e implementação de um filtro para a solução.
+
+Esses itens fazem parte das entregas planejadas e visam aprimorar a estrutura e funcionalidades do projeto.
 
 ### Sprint 3:
 
