@@ -2,41 +2,56 @@ import numpy as np
 import cv2
 from ultralytics import YOLO
 import os
+import psutil  # Para medir o uso de CPU e memória
+import time  # Para medir o tempo de execução
 
 # Função que converte área de pixels para metros quadrados
 def pixel_to_meters_squared(area_pixels, pixel_size_meters):
-    """
-    Converte a área de pixels para metros quadrados.
-
-    :param area_pixels: Área em pixels (número total de pixels segmentados)
-    :param pixel_size_meters: Tamanho de um pixel em metros (exemplo: 0.01 para 1 cm)
-    :return: Área em metros quadrados
-    """
     area_m2 = area_pixels * (pixel_size_meters ** 2)
     return area_m2
 
 # Função para estimar o número de árvores com base nos pixels segmentados
 def estimate_trees_interval(forest_pixels, pixels_per_tree_min=2000, pixels_per_tree_max=2500):
-    """
-    Estima o número de árvores com base no número de pixels segmentados e retorna um intervalo de confiança.
-
-    :param forest_pixels: Número total de pixels segmentados para a classe "Forest"
-    :param pixels_per_tree_min: Número mínimo de pixels por árvore (100 por padrão)
-    :param pixels_per_tree_max: Número máximo de pixels por árvore (125 por padrão)
-    :return: Intervalo estimado de número de árvores (mínimo, máximo)
-    """
     estimated_trees_min = forest_pixels / pixels_per_tree_max
     estimated_trees_max = forest_pixels / pixels_per_tree_min
     return estimated_trees_min, estimated_trees_max
 
+# Função para monitorar e exibir os recursos computacionais usados
+def log_system_usage(stage=""):
+    # Obtém o uso de CPU em porcentagem
+    cpu_usage = psutil.cpu_percent()
+    
+    # Obtém o uso de memória em MB
+    memory_usage = psutil.virtual_memory().used / (1024 ** 2)
+    
+    print(f"[{stage}] Uso de CPU: {cpu_usage}%")
+    print(f"[{stage}] Uso de memória: {memory_usage:.2f} MB")
+
+# Início do monitoramento
+start_time = time.time()
+
 # Carregar o modelo
 model = YOLO('./best.pt')
+
+# Registrar o uso de recursos após carregar o modelo
+log_system_usage("Após carregar o modelo")
 
 # Carregar a imagem
 image = cv2.imread('./img/view/ibira2.png')
 
+# Registrar o uso de recursos após carregar a imagem
+log_system_usage("Após carregar a imagem")
+
 # Fazer a predição
+prediction_start_time = time.time()
 results = model(image)
+prediction_end_time = time.time()
+
+# Registrar o uso de recursos após a predição
+log_system_usage("Após a predição")
+
+# Exibir o tempo gasto na predição
+print(f"Tempo gasto na predição: {prediction_end_time - prediction_start_time:.2f} segundos")
 
 # Obter os nomes das classes
 class_names = model.names
@@ -104,9 +119,17 @@ output_path = os.path.join(output_dir, 'result_forest.png')
 cv2.imwrite(output_path, image)
 print(f'Imagem com as máscaras da classe "Forest" salva em: {output_path}')
 
+# Registrar o uso de recursos após salvar a imagem
+log_system_usage("Após salvar a imagem")
+
 # Exibir a imagem resultante
 cv2.imshow('Resultado', image)
 
 # Aguardar até que qualquer tecla seja pressionada para fechar a janela
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# Tempo total de execução
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"Tempo total de execução: {elapsed_time:.2f} segundos")
