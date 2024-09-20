@@ -30,7 +30,7 @@ def estimate_trees_interval(forest_pixels, pixels_per_tree_min=2000, pixels_per_
     return estimated_trees_min, estimated_trees_max
 
 # Carregar o modelo
-model = YOLO('../trainning_v2/yolov8s-seg.pt')
+model = YOLO('./best.pt')
 
 # Carregar a imagem
 image = cv2.imread('./img/view/img.png')
