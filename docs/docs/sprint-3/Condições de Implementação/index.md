@@ -36,6 +36,6 @@ Ao final do processamento, o sistema gera relatório que mostram a quantidade de
 
 Essa solução não só automatiza a contagem de árvores, mas também oferece uma ferramenta robusta e acessível para monitoramento florestal. O sistema contribui diretamente para projetos de reflorestamento, combate às mudanças climáticas e preservação de ecossistemas, além de promover a inovação tecnológica no campo ambiental.
 
-Para melhor experiencia da interface dashboard, está disponivel o link do figma:
+Para melhor experiencia da interface dashboard [clique aqui](https://www.figma.com/proto/dgvsIn8QOuWolBKhzyxx7p/Carbon-Check?page-id=0%3A1&node-id=148-439&node-type=frame&viewport=921%2C-684%2C0.5&t=XLGXET4hRIfX9pf9-1&scaling=contain&content-scaling=fixed) está disponivel o link do figma:
 
-[![Figma-interface](/docs/static/img/interface.png)](https://www.figma.com/proto/dgvsIn8QOuWolBKhzyxx7p/Carbon-Check?page-id=0%3A1&node-id=148-439&node-type=frame&viewport=921%2C-684%2C0.5&t=XLGXET4hRIfX9pf9-1&scaling=contain&content-scaling=fixed)
+
