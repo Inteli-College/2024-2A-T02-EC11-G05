@@ -100,14 +100,12 @@ async def calculate_metrics(input: TreeInput):
     total_oxygen = num_trees * OXYGEN_PER_TREE
     total_water = num_trees * WATER_PER_TREE
     total_soil = num_trees * SOIL_PER_TREE
-    total_species = num_trees * SPECIES_PER_TREE
 
     return TreeMetrics(
         total_co2=total_co2,
         total_oxygen=total_oxygen,
         total_water=total_water,
         total_soil=total_soil,
-        total_species=total_species
     )
 
 
