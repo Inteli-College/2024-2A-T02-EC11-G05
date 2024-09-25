@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Stack, Box} from '@mui/material';
 import localCloud from './cloudIcon.svg'
 import Grid from '@mui/material/Grid2';
@@ -22,6 +22,34 @@ const DashboardPage: React.FC = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [numTrees, setNumTrees] = useState<number>(100);
+  const [metrics, setMetrics] = useState<any>(null);
+
+  // Fetch metrics from the backend
+  const fetchMetrics = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/calculate-metrics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ num_trees: numTrees }),
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setMetrics(data);  // Set the fetched metrics in the state
+      } else {
+        console.error('Failed to fetch metrics');
+      }
+    } catch (error) {
+      console.error('Error fetching metrics:', error);
+    }
+  };
+ // Fetch metrics whenever the numTrees value changes
+ useEffect(() => {
+  fetchMetrics();
+}, [numTrees]);
 
   // Rota para enviar a imagem pro backend
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +110,20 @@ const DashboardPage: React.FC = () => {
           <CompareImgComponent open={open} handleClose={handleClose} />
         </Stack>
       </Box>
-    <span>https://youtu.be/xs6loKKgWCY?t=947</span>
+      {metrics && (
+        <div>
+          <h2>Métricas Calculadas</h2>
+
+          <p>Além dos créditos de carbono as árvores também são responsáveis por um grande impacto no meio ambiente.</p>
+          <p>Os números abaixo indicam o impacto total das árvores em um período de 40 anos.</p>
+
+
+          <p>CO2 Sequestrado: {metrics.total_co2} kg</p>
+          <p>Oxigênio Produzido: {metrics.total_oxygen} kg</p>
+          <p>Água Retida: {metrics.total_water} litros</p>
+          <p>Solo Preservado: {metrics.total_soil} kg</p>
+        </div>
+      )}
 
     </div>
     
