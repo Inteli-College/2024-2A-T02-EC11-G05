@@ -3,6 +3,8 @@ from fastapi.responses import JSONResponse, FileResponse
 from datetime import datetime
 import os
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
 
 
 app = FastAPI()
@@ -66,6 +68,46 @@ def get_latest_image():
         return FileResponse(file_path, media_type="image/jpeg", filename=latest_file)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro: {str(e)}")
+    
+
+# Classe para retornar as métricas das árvores 
+# Constants for calculations
+CO2_PER_TREE = 48 * 40  # kg per tree over 40 years
+OXYGEN_PER_TREE = 117 * 40  # kg per tree over 40 years
+WATER_PER_TREE = 378 * 365 * 40  # liters per tree over 40 years
+SOIL_PER_TREE = 200 * 40  # kg per tree over 40 years
+
+# Input model for request body
+class TreeInput(BaseModel):
+    num_trees: int
+
+# Output model for response
+class TreeMetrics(BaseModel):
+    total_co2: int
+    total_oxygen: int
+    total_water: int
+    total_soil: int
+    total_species: int
+
+# Rota para calcular as métricas das árvores 
+@app.post("/calculate-metrics", response_model=TreeMetrics)
+async def calculate_metrics(input: TreeInput):
+    # Definindo o número de árvores
+    num_trees = 1
+    
+
+    total_co2 = num_trees * CO2_PER_TREE
+    total_oxygen = num_trees * OXYGEN_PER_TREE
+    total_water = num_trees * WATER_PER_TREE
+    total_soil = num_trees * SOIL_PER_TREE
+
+    return TreeMetrics(
+        total_co2=total_co2,
+        total_oxygen=total_oxygen,
+        total_water=total_water,
+        total_soil=total_soil,
+    )
+
 
 # Para rodar
 ### uvicorn main:app --reload

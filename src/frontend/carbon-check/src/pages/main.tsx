@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import NavbarComponent from "../components/Navbar";
 import styled from "styled-components";
 import Typography from "../components/Typography";
+import ImageTextComponent from "../components/textImage";
+
+
 
 //fontes das letras importadas do google fonts
 const link = document.createElement("link");
@@ -105,16 +108,16 @@ const MainPage = () => {
               sustentável para o planeta.
             </Typography>
           </SubText>
+         
           <UploadButton onClick={handleUploadClick}>Fazer upload</UploadButton>
         </Content>
       </MainContainer>
 
       {/*fundo de gradiente */}
       <SecondSection>
-        <Typography>Estamos na vanguarda da tokenização de florestas, <br />
-            gerando créditos de carbono que ajudam a manter <br />
-            as florestas de pé e a garantir um futuro <br /> 
-            sustentável para o planeta.</Typography>
+
+      <ImageTextComponent />
+
       </SecondSection>
 
       {/* Barra final com o verde escuro */}
@@ -124,3 +127,4 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
