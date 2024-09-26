@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métricas de Árvores e Upload de Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"], input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .output {
+            margin-top: 20px;
+        }
+
+        .output p {
+            font-size: 18px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload de Imagem e Métricas de Árvores</h1>
+
+        <!-- Upload de Arquivo -->
+        <div class="form-group">
+            <label for="file-input">Escolher um arquivo para upload:</label>
+            <input type="file" id="file-input" accept="image/*">
+        </div>
+        <div class="form-group">
+            <button id="upload-button">Upload Imagem</button>
+        </div>
+        <div id="upload-output" class="output"></div>
+
+        <!-- Campo para número de árvores -->
+        <div class="form-group">
+            <label for="num-trees">Número de árvores:</label>
+            <input type="number" id="num-trees" min="1" value="1">
+        </div>
+        <div class="form-group">
+            <button id="calculate-metrics-button">Calcular Métricas</button>
+        </div>
+        <div id="metrics-output" class="output"></div>
+
+        <!-- Botão para exibir a última imagem enviada -->
+        <div class="form-group">
+            <button id="show-image-button">Mostrar Última Imagem</button>
+        </div>
+
+        <!-- Exibir Imagem Enviada -->
+        <div id="image-output" class="output">
+            <img id="latest-image" src="" alt="Imagem enviada">
+        </div>
+    </div>
+
+    <script>
+        // Upload de Arquivo
+        document.getElementById('upload-button').addEventListener('click', async () => {
+            const fileInput = document.getElementById('file-input');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            const response = await fetch('http://127.0.0.1:8000/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('upload-output').innerText = result.message;
+        });
+
+        // Calcular Métricas de Árvores
+        document.getElementById('calculate-metrics-button').addEventListener('click', async () => {
+            const numTrees = document.getElementById('num-trees').value;
+
+            const response = await fetch('http://127.0.0.1:8000/calculate-metrics', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ num_trees: parseInt(numTrees) })
+            });
+
+            const result = await response.json();
+            document.getElementById('metrics-output').innerHTML = `
+                <p>Total CO2: ${result.total_co2} kg</p>
+                <p>Total Oxigênio: ${result.total_oxygen} kg</p>
+                <p>Total Água: ${result.total_water} litros</p>
+                <p>Total Solo: ${result.total_soil} kg</p>
+                <p>Total Espécies: ${result.total_species}</p>
+            `;
+        });
+
+        // Mostrar a última imagem enviada
+        document.getElementById('show-image-button').addEventListener('click', async () => {
+            const response = await fetch('http://127.0.0.1:8000/latest-image');
+            if (response.ok) {
+                document.getElementById('latest-image').src = response.url;
+            } else {
+                document.getElementById('latest-image').alt = 'Nenhuma imagem encontrada';
+            }
+        });
+    </script>
+</body>
+</html>
