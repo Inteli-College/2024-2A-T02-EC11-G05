@@ -6,7 +6,7 @@ const FlexContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: #f5f5f5;
+ 
 `;
 
 // Estiliza o wrapper da imagem
@@ -62,7 +62,7 @@ const ImageTextComponent: React.FC = () => {
 
       {/* Lado direito com o texto */}
       <TextWrapper>
-        <Heading>Sistema de Contagem de Árvores</Heading>
+      
         <Paragraph>
           Oferecemos um sistema que automatiza a contagem de árvores utilizando
           tecnologias avançadas de inteligência artificial e visão computacional.

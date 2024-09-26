@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Paper, Grid, Stack } from '@mui/material';
+import { Box, Typography, Paper, Grid, Stack, Modal } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import CompareIcon from '@mui/icons-material/Compare';
@@ -13,15 +13,16 @@ import CustomButton from '../components/CustomButton';
 
 
 const DashboardPage: React.FC = () => {
-  // Abrindo e fechando o modal
   const [open, setOpen] = useState(false);
+  const [numTrees, setNumTrees] = useState<number>(100);
+  const [metrics, setMetrics] = useState<any>(null);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null); // Definindo uploadedImage
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [numTrees, setNumTrees] = useState<number>(100);
-  const [metrics, setMetrics] = useState<any>(null);
 
-  // Fetch metrics from the backend
+
+
   const fetchMetrics = async () => {
     try {
       const response = await fetch('http://127.0.0.1:8000/calculate-metrics', {
@@ -31,10 +32,10 @@ const DashboardPage: React.FC = () => {
         },
         body: JSON.stringify({ num_trees: numTrees }),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
-        setMetrics(data);  // Set the fetched metrics in the state
+        setMetrics(data);
       } else {
         console.error('Failed to fetch metrics');
       }
@@ -43,14 +44,12 @@ const DashboardPage: React.FC = () => {
     }
   };
 
-
- useEffect(() => {
-  fetchMetrics();
-}, [numTrees]);
-
+  useEffect(() => {
+    fetchMetrics();
+  }, [numTrees]);
 
 
-  // Rota para enviar a imagem pro backend
+
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -65,6 +64,7 @@ const DashboardPage: React.FC = () => {
 
         if (response.ok) {
           console.log('File uploaded successfully');
+          setUploadedImage(URL.createObjectURL(file)); // Atualizando uploadedImage
         } else {
           console.error('File upload failed');
         }
@@ -72,114 +72,104 @@ const DashboardPage: React.FC = () => {
         console.error('Error uploading file:', error);
       }
     }
-
   };
 
 
-
-  //para os 3 botões do dashboard
-  const handleUploadClick = () => {
-    console.log("Upload clicked");
-  };
-
-  const handleAnalyzeClick = () => {
-    console.log("Analyze clicked");
-  };
-
-  const handleCompareClick = () => {
-    console.log("Compare clicked");
-  };
-
-
-
-
+  
   return (
     <div>
-      
       <Navbar />
 
-
-      {/* Adicionando o gradiente ao fundo */}
       <Box
         sx={{
           minHeight: '100vh',
           background: 'linear-gradient(to bottom, #ffffff, #e6f7e9)',
           display: 'flex',
-          alignItems: 'flex-start', 
-          paddingTop: { xs: '2%', md: '3%' }, 
+          alignItems: 'flex-start',
+          paddingTop: { xs: '2%', md: '3%' },
           paddingBottom: '2%',
         }}
       >
-        {/* Grid principal */}
         <Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ padding: 10 }}>
-
-         
-           
-
-          {/* Quadro 1: Intervalo de Árvores */}
           <Grid item xs={12} md={5}>
             <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
-             
-
-              {/* Usando o TrustComponent para o gráfico deve ser integrado */}
               <TrustComponent percentage={85} minValue={0} maxValue={100} />
-
               <Typography variant="h6" align="center" gutterBottom>
                 Intervalo de Árvores
               </Typography>
-
             </Paper>
           </Grid>
 
-
-
-          {/* Quadro 2: Total de Árvores e Carbono Reciclado */}
           <Grid item xs={12} md={5}>
             <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
-              
               <Grid container spacing={2} justifyContent="center">
-                
                 <Grid item>
                   <TreeNumber value={198} label="TOTAL DE ÁRVORES" imageSrc="/tree_icon.png" />
                 </Grid>
-               
                 <Grid item sx={{ ml: 4 }}>
                   <TreeNumber value="3366 KG" label="carbono reciclado" imageSrc="/CO2_icon.png" />
                 </Grid>
-                
               </Grid>
             </Paper>
           </Grid>
 
-
-          {/* adicionar os botões */}
           <Grid item xs={15}>
             <Stack direction="row" spacing={4} justifyContent="center">
-            
-              {/* Botão Inserir Imagem */}
-              <CustomButton 
-                label="Inserir imagem" 
-                iconSrc="/inserir_img.png" 
-                onClick={handleUploadClick} 
+              <CustomButton
+                label="Inserir imagem"
+                iconSrc="/inserir_img.png"
+                onClick={() => {
+                  document.getElementById('upload-input')?.click();
+                }}
               />
 
-              {/* Botão Analisar Terreno */}
-              <CustomButton 
-                label="Analisar terreno" 
-                iconSrc="/analisa_img.png" 
-                onClick={handleAnalyzeClick} 
+              <input
+                type="file"
+                id="upload-input"
+                style={{ display: 'none' }}
+                accept="image/*"
+                onChange={handleFileUpload}
               />
 
-              {/* Botão Comparar Imagens */}
-              <CustomButton 
-                label="Comparar imagens" 
-                iconSrc="/compara_img.png" 
-                onClick={handleCompareClick} 
+              <CustomButton
+                label="Analisar terreno"
+                iconSrc="/analisa_img.png"
+                onClick={handleOpen}
+              />
+
+              <CustomButton
+                label="Comparar imagens"
+                iconSrc="/compara_img.png"
+                onClick={() => console.log('Comparar imagens clicado')}
               />
             </Stack>
           </Grid>
 
+          <Modal open={open} onClose={handleClose} aria-labelledby="modal-title" aria-describedby="modal-description">
+            <Box
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 400,
+                bgcolor: 'background.paper',
+                boxShadow: 24,
+                p: 4,
+                textAlign: 'center',
+              }}
+            >
+             
+                
+              {uploadedImage ? (
+                <img src={uploadedImage} alt="Imagem Carregada" style={{ maxWidth: '100%', maxHeight: '300px' }} />
+              ) : (
+                <Typography variant="body1">Nenhuma imagem carregada.</Typography>
+              )}
 
+              <CustomButton label="Fechar" iconSrc="/close_icon.png" onClick={handleClose} />
+            </Box>
+          </Modal>
         </Grid>
       </Box>
     </div>
