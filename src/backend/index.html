@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métricas de Árvores e Upload de Imagens</title>
+    <title>Segmentação de Imagem e Métricas de Árvores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
             margin-bottom: 20px;
         }
 
-        input[type="file"], input[type="number"] {
+        input[type="file"] {
             padding: 10px;
             font-size: 16px;
             width: 100%;
@@ -45,10 +45,6 @@
             margin-top: 20px;
         }
 
-        .output p {
-            font-size: 18px;
-        }
-
         img {
             max-width: 100%;
             height: auto;
@@ -58,84 +54,101 @@
 </head>
 <body>
     <div class="container">
-        <h1>Upload de Imagem e Métricas de Árvores</h1>
+        <h1>Segmentação de Imagem de Florestas</h1>
 
-        <!-- Upload de Arquivo -->
+        <!-- Upload de Imagem -->
         <div class="form-group">
             <label for="file-input">Escolher um arquivo para upload:</label>
             <input type="file" id="file-input" accept="image/*">
         </div>
         <div class="form-group">
-            <button id="upload-button">Upload Imagem</button>
+            <button id="upload-button">Upload e Segmentar Imagem</button>
         </div>
         <div id="upload-output" class="output"></div>
 
-        <!-- Campo para número de árvores -->
+        <!-- Botão para exibir métricas do JSON -->
         <div class="form-group">
-            <label for="num-trees">Número de árvores:</label>
-            <input type="number" id="num-trees" min="1" value="1">
+            <button id="show-json-metrics-button">Exibir Métricas do JSON</button>
         </div>
-        <div class="form-group">
-            <button id="calculate-metrics-button">Calcular Métricas</button>
-        </div>
-        <div id="metrics-output" class="output"></div>
+        <div id="json-metrics-output" class="output"></div>
 
-        <!-- Botão para exibir a última imagem enviada -->
+        <!-- Botão para buscar a imagem segmentada -->
         <div class="form-group">
-            <button id="show-image-button">Mostrar Última Imagem</button>
+            <button id="show-image-button">Exibir Imagem Segmentada</button>
         </div>
 
-        <!-- Exibir Imagem Enviada -->
+        <!-- Exibir Imagem Segmentada -->
         <div id="image-output" class="output">
-            <img id="latest-image" src="" alt="Imagem enviada">
+            <img id="processed-image" src="" alt="Imagem segmentada">
         </div>
     </div>
 
     <script>
-        // Upload de Arquivo
+        // Função para upload e segmentação da imagem
         document.getElementById('upload-button').addEventListener('click', async () => {
             const fileInput = document.getElementById('file-input');
             const formData = new FormData();
             formData.append('file', fileInput.files[0]);
 
-            const response = await fetch('http://127.0.0.1:8000/upload', {
-                method: 'POST',
-                body: formData
-            });
+            try {
+                const response = await fetch('http://127.0.0.1:8000/segment', {
+                    method: 'POST',
+                    body: formData
+                });
 
-            const result = await response.json();
-            document.getElementById('upload-output').innerText = result.message;
+                if (!response.ok) {
+                    throw new Error("Erro ao processar a imagem");
+                }
+
+                const result = await response.json();
+                
+                // Exibir mensagem de sucesso e tempo de processamento
+                document.getElementById('upload-output').innerText = `
+                    Mensagem: ${result.message}
+                    Tempo de Processamento: ${result.processing_time.toFixed(2)} segundos
+                    Pixels da Floresta: ${result.forest_pixels}
+                `;
+            } catch (error) {
+                console.error("Erro:", error);
+                document.getElementById('upload-output').innerText = "Erro ao processar a imagem.";
+            }
         });
 
-        // Calcular Métricas de Árvores
-        document.getElementById('calculate-metrics-button').addEventListener('click', async () => {
-            const numTrees = document.getElementById('num-trees').value;
+        // Função para exibir as métricas do JSON
+        document.getElementById('show-json-metrics-button').addEventListener('click', async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/metrics');
+                if (!response.ok) {
+                    throw new Error("Erro ao buscar as métricas");
+                }
 
-            const response = await fetch('http://127.0.0.1:8000/calculate-metrics', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ num_trees: parseInt(numTrees) })
-            });
+                const metrics = await response.json();
 
-            const result = await response.json();
-            document.getElementById('metrics-output').innerHTML = `
-                <p>Total CO2: ${result.total_co2} kg</p>
-                <p>Total Oxigênio: ${result.total_oxygen} kg</p>
-                <p>Total Água: ${result.total_water} litros</p>
-                <p>Total Solo: ${result.total_soil} kg</p>
-                <p>Total Espécies: ${result.total_species}</p>
-            `;
+                // Exibir as métricas do JSON
+                document.getElementById('json-metrics-output').innerText = `
+                    Área Total Segmentada: ${metrics.total_area_m2.toFixed(2)} m²
+                    Estimativa Mínima de Árvores: ${metrics.estimated_trees_min}
+                    Estimativa Máxima de Árvores: ${metrics.estimated_trees_max}
+                    Estimativa Central de Árvores: ${metrics.estimated_trees_central}
+                    CO2 Sequestrado: ${metrics.total_co2.toFixed(2)} kg/ano
+                    Oxigênio Produzido: ${metrics.total_oxygen.toFixed(2)} kg/ano
+                    Água Retida: ${metrics.total_water.toFixed(2)} litros/ano
+                    Solo Preservado: ${metrics.total_soil.toFixed(2)} kg/ano
+                    Biodiversidade Suportada: ${metrics.total_species.toFixed(2)} espécies
+                `;
+            } catch (error) {
+                console.error("Erro:", error);
+                document.getElementById('json-metrics-output').innerText = "Erro ao buscar as métricas do JSON.";
+            }
         });
 
-        // Mostrar a última imagem enviada
+        // Função para exibir a imagem segmentada ao clicar no botão
         document.getElementById('show-image-button').addEventListener('click', async () => {
-            const response = await fetch('http://127.0.0.1:8000/latest-image');
+            const response = await fetch('http://127.0.0.1:8000/processed-image');
             if (response.ok) {
-                document.getElementById('latest-image').src = response.url;
+                document.getElementById('processed-image').src = response.url;
             } else {
-                document.getElementById('latest-image').alt = 'Nenhuma imagem encontrada';
+                document.getElementById('upload-output').innerText = "Erro ao buscar a imagem segmentada.";
             }
         });
     </script>
