@@ -1,32 +1,47 @@
-import React from "react";
+import React from 'react';
+import { Box, Typography } from '@mui/material';
 import styled from "styled-components";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-
-const CircleContainer = styled.div`
-  width: 150px;
-  height: 150px;
-  border: 2px solid black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-`;
 
 
 
-const TreeINumber: React.FC<{ totalTrees: number }> = ({ totalTrees }) => {
+interface TreeNumberProps {
+  value: number | string;
+  label: string;
+  imageSrc?: string;
+}
+
+
+const TreeNumber: React.FC<TreeNumberProps> = ({ value, label, imageSrc }) => {
   return (
-    <Card sx={{ maxWidth: 450 }}>
-      <CardContent>
-      <CircleContainer>
-        <span style={{ fontSize: "24px", fontWeight: "bold" }}>{totalTrees}</span>
-      </CircleContainer>
-      <p style={{ textAlign: "center", marginTop: "10px" }}>TOTAL ÁRVORES</p>
-    </CardContent>
-    </Card>
+    <Box sx={{ textAlign: 'center' }}>
+      {/* Círculo com o número */}
+      <Box
+        sx={{
+          width: 130,
+          height: 130,
+          borderRadius: '50%',
+          border: '3px solid black',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 1.5, // Pequeno espaço entre o círculo e a legenda
+        }}
+      >
+        <Typography variant="h6" align="center">
+          {value}
+        </Typography>
+        </Box>
+      {/* Legenda */}
+      <Typography variant="body2">{label}</Typography>
+      
+      {imageSrc && (
+        <Box mt={1}>
+          <img src={imageSrc} alt={label} width={40} height={40} /> 
+        </Box>
+      )}
+
+    </Box>
   );
 };
 
-export default TreeINumber;
+export default TreeNumber;

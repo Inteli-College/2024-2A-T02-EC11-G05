@@ -1,24 +1,19 @@
-import React, {useState} from 'react';
-import {Button, Stack, Box} from '@mui/material';
-import localCloud from './cloudIcon.svg'
-import Grid from '@mui/material/Grid2';
-
+import React, { useState } from 'react';
+import { Box, Typography, Paper, Grid } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import CompareIcon from '@mui/icons-material/Compare';
-
 import CompareImgComponent from '../components/CompareImgComponent';
-
 import TreeNumber from '../components/TreeNumber';
 import TrustComponent from '../components/TrustComponent';
+import Navbar from '../components/Navbar';
 
 
 
 
 const DashboardPage: React.FC = () => {
-
   // Abrindo e fechando o modal
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -49,43 +44,71 @@ const DashboardPage: React.FC = () => {
 
 
 
+
   return (
     <div>
-      <h1>Dashboard</h1>
-    <Grid container spacing={1}>
-    <Grid size={5} offset={{ md: 2 }}>
-    <TrustComponent percentage={85} startYear={1903} endYear={2050} />
-    </Grid>
-    <Grid size={5}>
-    <TreeNumber totalTrees={1984} />
-    </Grid>
-    </Grid>
-    <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        height="20vh" 
-      >
-        <Stack direction="row" spacing={8}>
-          <Button  variant="outlined" color="success" startIcon={<CloudUploadIcon />}>
-          <label htmlFor="upload-input" style={{ cursor: 'pointer' }}>
-              Inserir imagem
-            </label>
-          </Button>
-          <input id="upload-input" type="file" style={{ display: 'none' }} onChange={handleFileUpload} />
-          <Button variant="outlined" startIcon={<AnalyticsIcon />}>
-            Analisar terreno
-          </Button>
-          <Button onClick={handleOpen} variant="outlined" startIcon={<CompareIcon />}>
-            Comparar imagens
-          </Button>
-          <CompareImgComponent open={open} handleClose={handleClose} />
-        </Stack>
-      </Box>
-    <span>https://youtu.be/xs6loKKgWCY?t=947</span>
+      
+      <Navbar />
 
+      {/* Adicionando o gradiente ao fundo */}
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(to bottom, #ffffff, #e6f7e9)',
+          display: 'flex',
+          alignItems: 'flex-start', 
+          paddingTop: { xs: '2%', md: '3%' }, 
+          paddingBottom: '2%',
+        }}
+      >
+        {/* Grid principal */}
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ padding: 10 }}
+        >
+
+
+
+          {/* Quadro 1: Intervalo de Árvores */}
+          <Grid item xs={12} md={5}>
+            <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
+             
+
+              {/* Usando o TrustComponent para o gráfico deve ser integrado */}
+              <TrustComponent percentage={85} minValue={0} maxValue={100} />
+
+              <Typography variant="h6" align="center" gutterBottom>
+                Intervalo de Árvores
+              </Typography>
+
+            </Paper>
+          </Grid>
+
+
+
+          {/* Quadro 2: Total de Árvores e Carbono Reciclado */}
+          <Grid item xs={12} md={5}>
+            <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
+              
+              <Grid container spacing={2} justifyContent="center">
+                
+                <Grid item>
+                  <TreeNumber value={198} label="TOTAL DE ÁRVORES" imageSrc="/tree_icon.png" />
+                </Grid>
+               
+                <Grid item sx={{ ml: 4 }}>
+                  <TreeNumber value="3366 KG" label="carbono reciclado" imageSrc="/CO2_icon.png" />
+                </Grid>
+                
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
-    
   );
 };
 
