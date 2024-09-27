@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
 import DashboardPage from './pages/dashboard';
 import MainPage from './pages/main';
 
