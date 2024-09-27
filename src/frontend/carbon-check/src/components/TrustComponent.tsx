@@ -1,53 +1,94 @@
-import React from "react";
-import styled from "styled-components";
-import CardContent from '@mui/material/CardContent';
-import Card from '@mui/material/Card';
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
+import { Box, Typography } from '@mui/material';
+import { ApexOptions } from 'apexcharts';  // Importando a tipagem correta para as opções do ApexCharts
 
 
 
 
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-
-const SemiCircleWrapper = styled.div`
-  width: 200px;
-  height: 150px;
-  margin: 20px;
-  position: relative;
-    display: flex;
-  align-items: center;
-  justify-content: center;
+const TrustComponent: React.FC<{ percentage: number, minValue: number, maxValue: number }> = ({ percentage, minValue, maxValue }) => {
   
-`;
 
 
+  const chartData: { options: ApexOptions, series: number[] } = {
+    series: [percentage], 
+    options: {
+      chart: {
+        type: 'radialBar',
+        offsetY: -20,
+        sparkline: {
+          enabled: true,
+        },
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -90,
+          endAngle: 90,
+          track: {
+            background: '#e6f7e9',
+            strokeWidth: '97%',
+            margin: 5, // margin em pixels
+            dropShadow: {
+              enabled: true,
+              top: 2,
+              left: 0,
+              color: '#e6f7e9',
+              opacity: 1,
+              blur: 2,
+            },
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              offsetY: -10,
+              fontSize: '20px',
+              formatter: (val: number) => `${val}%`, // Mostrar como porcentagem
+            },
+          },
+        },
+      },
+      grid: {
+        padding: {
+          top: -10,
+        },
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'light',
+          shadeIntensity: 0.4,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 53, 91],
+        },
+      },
+      labels: ['Intervalo de Árvores'],
+    },
+  };
 
-const TrustComponent: React.FC<{ percentage: number; startYear: number; endYear: number }> = ({ percentage, startYear, endYear }) => {
   return (
-    <Card sx={{ maxWidth: 450 }}>
-    <CardContent>
 
-    <SemiCircleWrapper>
-      <CircularProgressbar
-        value={percentage}
-        maxValue={100}
-        styles={buildStyles({
-          pathColor: `rgba(60, 179, 113, ${percentage / 100})`, // Gradient effect can be customized here
-          trailColor: "transparent",
-          rotation: 0.75, // Start from the bottom center
-          strokeLinecap: "butt", // Make the progress path square-ended
-        })}
-        circleRatio={0.5} 
+    
+    <Box sx={{ textAlign: 'center' }}>
+      <ReactApexChart
+        options={chartData.options}
+        series={chartData.series}
+        type="radialBar"
+        height={350}
       />
-      <div style={{ position: "absolute", left: "0", right: "0", bottom: "0", textAlign: "center" }}>
-        <p >{startYear}</p>
-        <p >{endYear}</p>
-        <p >{`${percentage}%`}</p>
-        <p >Confiabilidade e Intervalo de Árvores</p>
-      </div>
-    </SemiCircleWrapper>
-    </CardContent>
-    </Card>
+
+
+      {/* Legendas do intervalo */}
+      <Box display="flex" justifyContent="space-between" mt={-2}>
+        <Typography variant="body2" sx={{ ml: 11 }}>{minValue}</Typography> 
+        <Typography variant="body2" sx={{ mr: 10 }}>{maxValue}</Typography> 
+      </Box>
+
+
+    </Box>
   );
 };
 
