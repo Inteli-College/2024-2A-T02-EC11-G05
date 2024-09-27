@@ -90,28 +90,32 @@ const DashboardPage: React.FC = () => {
           paddingBottom: '2%',
         }}
       >
+
         <Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ padding: 10 }}>
           <Grid item xs={12} md={5}>
-            <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
+            <Paper elevation={5} sx={{ padding: 3, borderRadius: '16px' }}>
               <TrustComponent percentage={85} minValue={0} maxValue={100} />
-              <Typography variant="h6" align="center" gutterBottom>
+              <Typography variant="h6" align="center" gutterBottom sx={{ fontSize: '15px', fontWeight: 'bold' }}>
                 Intervalo de Árvores
               </Typography>
             </Paper>
           </Grid>
 
+
           <Grid item xs={12} md={5}>
-            <Paper elevation={3} sx={{ padding: 3, borderRadius: '16px' }}>
+            <Paper elevation={5} sx={{ padding: 3, borderRadius: '16px' }}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <TreeNumber value={198} label="TOTAL DE ÁRVORES" imageSrc="/tree_icon.png" />
+                  <TreeNumber value={198} label="TOTAL DE ÁRVORES" imageSrc="/tree_icon.png"/>
                 </Grid>
                 <Grid item sx={{ ml: 4 }}>
-                  <TreeNumber value="3366 KG" label="carbono reciclado" imageSrc="/CO2_icon.png" />
+                  
+                  <TreeNumber value="3366 KG" label=" CARBONO RECICLADO" imageSrc="/CO2_icon.png"/>
                 </Grid>
               </Grid>
             </Paper>
           </Grid>
+          
 
           <Grid item xs={15}>
             <Stack direction="row" spacing={4} justifyContent="center">
