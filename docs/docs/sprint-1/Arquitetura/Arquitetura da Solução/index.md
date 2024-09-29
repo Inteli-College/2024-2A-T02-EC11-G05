@@ -6,7 +6,7 @@ sidebar_position: 2
 
 A arquitetura da solução refere-se ao esqueleto ou estrutura geral que descreve como os componentes de um sistema interagem entre si para alcançar um objetivo específico. Ela define os principais blocos de construção do sistema, como são interligados e como os dados fluem entre eles. Em projetos de visão computacional embarcados, a arquitetura da solução desempenha um papel crucial para garantir que todas as partes do sistema funcionem de forma coesa e eficiente, desde a coleta de dados até a interface do usuário final.
 
-Nesta seção, será descrita a interação dos componentes de hardware e software utilizadas para processar as imagens aéreas obtidas das árvores, bem como processá-las em um dispositivo que possa ser embarcado em um veículo aéreo, atendendo aos requisitos do módulo de computação embarcada e edge computing. 
+Nesta seção, será descrita a interação dos componentes de hardware e software utilizadas para processar as imagens aéreas obtidas das árvores, bem como processá-las em um dispositivo que possa ser embarcado em um veículo aéreo, atendendo aos requisitos do módulo de computação embarcada e edge computing.
 
 O modelo de classificação de árvores também utilizará técnicas que não demandem alto custo computacional. Por fim, uma API para facilitar a comunicação entre componentes e uma interface de usuário para visualização dos resultados será descrita. Cada uma dessas tecnologias foi cuidadosamente escolhida para desempenhar um papel específico na solução.
 

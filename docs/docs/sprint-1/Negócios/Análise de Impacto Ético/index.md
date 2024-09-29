@@ -33,7 +33,7 @@ O projeto proposto para a Abundance Brasil envolve o desenvolvimento de um model
   - **Discriminação entre Espécies:** O modelo deve ser treinado para reconhecer diferentes espécies de árvores com precisão. Caso contrário, pode haver uma sub-representação de certas espécies, afetando a biodiversidade e a gestão ambiental.
   
   - **Viés nos Dados:** Se o modelo for treinado com dados que não representem adequadamente a diversidade de condições ambientais (como variações sazonais ou regionais), ele pode falhar em fornecer contagens precisas em todas as situações, comprometendo a eficácia do projeto.
-    
+
 ## **Privacidade e proteção de dados**
 
 Privacidade e proteção de dados são fundamentais em qualquer tecnologia que manipule informações sensíveis. Esse tópico abrange práticas para garantir que dados sejam coletados, armazenados e processados de forma segura e em conformidade com leis como a LGPD, protegendo os direitos dos indivíduos.

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 A arquitetura da solução refere-se ao esqueleto ou estrutura geral que descreve como os componentes de um sistema interagem entre si para alcançar um objetivo específico. Ela define os principais blocos de construção do sistema, como são interligados e como os dados fluem entre eles. Em projetos de visão computacional embarcados, a arquitetura da solução desempenha um papel crucial para garantir que todas as partes do sistema funcionem de forma coesa e eficiente, desde a coleta de dados até a interface do usuário final.
 
-Nesta seção, será descrita a interação dos componentes de hardware e software utilizadas para processar as imagens aéreas obtidas das árvores, bem como processá-las em um dispositivo que possa ser embarcado em um veículo aéreo, atendendo aos requisitos do módulo de computação embarcada e edge computing. 
+Nesta seção, será descrita a interação dos componentes de hardware e software utilizadas para processar as imagens aéreas obtidas das árvores, bem como processá-las em um dispositivo que possa ser embarcado em um veículo aéreo, atendendo aos requisitos do módulo de computação embarcada e edge computing.
 
 O modelo de classificação de árvores também utilizará técnicas que não demandem alto custo computacional. Por fim, uma API para facilitar a comunicação entre componentes e uma interface de usuário para visualização dos resultados será descrita. Cada uma dessas tecnologias foi cuidadosamente escolhida para desempenhar um papel específico na solução.
 
@@ -14,8 +14,7 @@ O modelo de classificação de árvores também utilizará técnicas que não de
 
 ## Tecnologias Utilizadas
 
-Para a terceira versão da arquitetura, planejamos embarcamos o modelo em um **Raspberry Pi 5 de 8GB RAM**, servindo como a entidade responsável para processar o modelo de visão computacional. Já o backend e frontend rodam no computador do usuário. 
-
+Para a terceira versão da arquitetura, planejamos embarcamos o modelo em um **Raspberry Pi 5 de 8GB RAM**, servindo como a entidade responsável para processar o modelo de visão computacional. Já o backend e frontend rodam no computador do usuário.
 
 ### Modelo
 
@@ -38,7 +37,6 @@ O Modelo irá gerar o resultado e por meio de uma api, as imagens geradas e filt
 Para o frontend, utilizaremos **[React](https://react.dev/)**, uma framework de JavaScript para criação de aplicaçoes Web.
 
 A escolha deve-se tambem pela praticidade e o conhecimento do grupo pela ferramenta, tornando o seu desenvolvimento mais rapido.
-
 
 # Conclusão
 

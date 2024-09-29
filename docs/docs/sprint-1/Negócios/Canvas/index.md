@@ -58,7 +58,7 @@ Na figura acima, do lado esquerdo temos o produto e suas características e do l
 
 - O uso de visão computacional não apenas melhora a precisão, mas também acelera o processo de contagem, permitindo que as operações sejam mais produtivas e menos custosas.
 
-### Ganhos 
+### Ganhos
 
 1. Visualização dos dados e métricas sobre as áreas:
 
@@ -73,4 +73,5 @@ Na figura acima, do lado esquerdo temos o produto e suas características e do l
 - A confiabilidade na contagem de árvores ajuda a evitar sub ou superestimação de recursos, garantindo a precisão nas estimativas de crédito de carbono.
 
 # Conclusão
+
 Esse canvas de proposta de valor destaca como a solução não apenas resolve as dores específicas do cliente, mas também cria novos ganhos em termos de eficiência, confiabilidade, e escalabilidade. Com essas melhorias, sua solução para a Abundance se posiciona como uma ferramenta essencial para a gestão de florestas plantadas e o mercado de créditos de carbono.

@@ -12,11 +12,13 @@ O projeto **"Contagem do número de árvores através de imagens de satélites/d
 ### Telas do Projeto
 
 #### **Tela 1: Landing Page**
+
 - **Descrição**: Página inicial da aplicação, projetada para ser simples e intuitiva. Serve como ponto de entrada, onde os usuários podem fazer o upload de imagens que serão analisadas.
 - **Elemento Principal**:
   - **Botão de Upload de Imagem**: Posicionado centralmente para facilitar o acesso do usuário, permitindo o envio de imagens para análise.
 
 #### **Tela 2: Dashboard**
+
 - **Descrição**: Painel de controle onde os dados das imagens carregadas são processados e apresentados.
 - **Elementos**:
   - **Gráfico 1: Número de Árvores**: Visualiza o número de árvores contadas na imagem carregada.
@@ -27,11 +29,13 @@ O projeto **"Contagem do número de árvores através de imagens de satélites/d
     - **Comparar Imagem**: Oferece a funcionalidade de comparar a imagem atual com uma imagem anterior, facilitando a visualização das mudanças no terreno.
 
 #### **Tela 3: Imagem Carregada**
+
 - **Descrição**: Tela que exibe a imagem carregada pelo usuário após o upload. É a área onde o usuário pode ver a imagem que será analisada.
 - **Elemento Principal**:
   - **Imagem Carregada**: Exibe a imagem centralizada para facilitar a visualização e a análise.
 
 #### **Tela 4: Popup Antes e Depois**
+
 - **Descrição**: Um popup que aparece para mostrar a comparação do estado do terreno antes e depois do plantio de árvores, permitindo ao usuário observar visualmente o impacto das ações de reflorestamento.
 - **Elemento Principal**:
   - **Imagem de Comparação**: Apresenta as imagens do "antes" e "depois" lado a lado ou em uma sobreposição, destacando as mudanças.
@@ -39,4 +43,3 @@ O projeto **"Contagem do número de árvores através de imagens de satélites/d
 ## Conclusão
 
 A interface desenvolvida no Figma é uma peça central no projeto de contagem automatizada de árvores da Abundance Brasil. Ela permite que os usuários interajam de forma simples e direta com a ferramenta, otimizando o processo de análise de grandes áreas florestais. Ao garantir que a interface seja acessível e funcional, este projeto contribui significativamente para a missão da Abundance de proteger e restaurar florestas, promovendo a sustentabilidade e a preservação ambiental em larga escala.
-
