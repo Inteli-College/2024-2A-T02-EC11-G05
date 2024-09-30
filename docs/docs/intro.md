@@ -79,7 +79,20 @@ Assim, conseguimos avançar bastante em relação a todos os aspectos da integra
 
 ### Sprint 4
 
-<a href="https://www.imagensanimadas.com/cat-em-construcao-695.htm"><img src="https://www.imagensanimadas.com/data/media/695/em-construcao-imagem-animada-0050.gif" border="0" alt="em-construcao-imagem-animada-0050" /></a>
+Na quarta sprint do projeto, tivemos como principal objetivo a integração do modelo, criação de novas métricas, análise financeira e melhoramento do frontend. 
+
+Assim, conseguimos avançar bastante em relação a todos os aspectos da integração do modelo de IA e criamos métricas que foram muito interessantes para o parceiro. Além disso, desenvolvemos as mais diversas secções da documentação sobre os assuntos desenvolvidos na semana. 
+
+
+  <iframe loading="lazy" 
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGR89VHW1k&#x2F;mxpjlbhN4LOzQLe2_ggI4A&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+
+  Na próxima e última sprint, o objetivo é: 
+  - Incorporar as novas métricas no frontend
+  - Integração do frontend novo com o modelo
+  - Terminar o frontend
+  - Conexão com o sistema edge.
 
 ### Sprint 5
 
