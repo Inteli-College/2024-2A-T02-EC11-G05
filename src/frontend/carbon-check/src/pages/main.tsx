@@ -118,6 +118,7 @@ const MainPage = () => {
 
       <ImageTextComponent />
 
+      
       </SecondSection>
 
       {/* Barra final com o verde escuro */}

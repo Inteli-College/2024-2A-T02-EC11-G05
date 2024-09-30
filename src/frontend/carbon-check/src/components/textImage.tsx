@@ -1,21 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Container flexível que segura a imagem e o texto
+
+
+
+
+// Container flexível que segura a imagem e o texto, É global, se colocar um background aqui ele tira o gradiente 
 const FlexContainer = styled.div`
+  flex: 1;
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: #f5f5f5;
 `;
 
-// Estiliza o wrapper da imagem
+
+// Estiliza o wrapper da imagem da mão com o broto
 const ImageWrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  
 `;
 
 // Estiliza o wrapper do texto
@@ -29,11 +34,18 @@ const TextWrapper = styled.div`
   box-sizing: border-box;
 `;
 
+
+
+
+
 // Estilo da imagem para garantir que fique dentro do espaço
 const Image = styled.img`
   max-width: 100%;
   height: auto;
 `;
+
+
+
 
 // Título e parágrafo do texto
 const Heading = styled.h1`
@@ -49,8 +61,14 @@ const Paragraph = styled.p`
   line-height: 1.6;
 `;
 
+
+
+
 const ImageTextComponent: React.FC = () => {
   return (
+
+
+    
     <FlexContainer>
       {/* Lado esquerdo com a imagem */}
       <ImageWrapper>
@@ -58,25 +76,45 @@ const ImageTextComponent: React.FC = () => {
           src="/broto_2.png" 
           alt="Broto de árvore" 
         />
+        <Paragraph>
+          Oferecemos um sistema que automatiza a <br /> 
+          contagem de árvores utilizando tecnologias <br />
+          avançadas de inteligência artificial e visão <br />
+          computacional.
+        </Paragraph>
+
+         
       </ImageWrapper>
+
+
+
+
 
       {/* Lado direito com o texto */}
       <TextWrapper>
-        <Heading>Sistema de Contagem de Árvores</Heading>
-        <Paragraph>
-          Oferecemos um sistema que automatiza a contagem de árvores utilizando
-          tecnologias avançadas de inteligência artificial e visão computacional.
-        </Paragraph>
-        <Paragraph>
-          Apenas em um clique é possível fazer o upload de imagens capturadas por satélites. A partir dessas imagens, o sistema automatiza a contagem de árvores, fornecendo dados precisos e rápidos para a gestão ambiental e geração de créditos de carbono.
-        </Paragraph>
+        
+        
+
+       
+        
         {/* Adicionando a nova imagem do planeta */}
         <ImageWrapper>
           <Image 
-            src="/planeta-terra 2.png" 
+            src="/planeta-terra.png" 
             alt="Planeta Terra" 
           />
+          <Paragraph>
+          Apenas em um clique é possível fazer o <br /> 
+          upload de imagens capturadas por satélites.<br />
+          A partir dessas imagens, o sistema <br />
+          automatiza a contagem de árvores, <br />
+          fornecendo dados precisos e rápidos para a <br /> 
+          gestão ambiental e geração de créditos de carbono.
+        </Paragraph>
         </ImageWrapper>
+
+
+      
       </TextWrapper>
     </FlexContainer>
   );
