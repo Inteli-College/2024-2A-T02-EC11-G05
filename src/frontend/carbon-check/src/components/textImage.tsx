@@ -11,6 +11,7 @@ const FlexContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
+  background-color: #f5f5f5;
 `;
 
 
@@ -92,11 +93,14 @@ const ImageTextComponent: React.FC = () => {
 
       {/* Lado direito com o texto */}
       <TextWrapper>
-        
-        
-
-       
-        
+        <Heading>Sistema de Contagem de Árvores</Heading>
+        <Paragraph>
+          Oferecemos um sistema que automatiza a contagem de árvores utilizando
+          tecnologias avançadas de inteligência artificial e visão computacional.
+        </Paragraph>
+        <Paragraph>
+          Apenas em um clique é possível fazer o upload de imagens capturadas por satélites. A partir dessas imagens, o sistema automatiza a contagem de árvores, fornecendo dados precisos e rápidos para a gestão ambiental e geração de créditos de carbono.
+        </Paragraph>
         {/* Adicionando a nova imagem do planeta */}
         <ImageWrapper>
           <Image 

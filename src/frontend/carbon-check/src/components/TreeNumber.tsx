@@ -8,6 +8,7 @@ interface TreeNumberProps {
   value: number | string;
   label: string;
   imageSrc?: string;
+  sx?: object;
 }
 
 
@@ -24,7 +25,7 @@ const TreeNumber: React.FC<TreeNumberProps> = ({ value, label, imageSrc }) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginBottom: 1.5, // Pequeno espaço entre o círculo e a legenda
+          marginBottom: 1.5, 
         }}
       >
         <Typography variant="h6" align="center">
@@ -35,7 +36,7 @@ const TreeNumber: React.FC<TreeNumberProps> = ({ value, label, imageSrc }) => {
       <Typography variant="body2">{label}</Typography>
       
       {imageSrc && (
-        <Box mt={1}>
+        <Box mt={3}>
           <img src={imageSrc} alt={label} width={40} height={40} /> 
         </Box>
       )}
