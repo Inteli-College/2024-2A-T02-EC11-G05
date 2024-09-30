@@ -7,7 +7,7 @@ sidebar_position: 2
 
 Esta análise transcende a esfera numérica para questionar como o investimento em inovação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao meio-ambiente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da ecologia. Não apenas um objetivo financeiro; mas um passo fundamental na jornada contínua de inovação e melhoria no cuidado ao meio-ambiente, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar da ordem natural.
 
-Valores estimados em USD. Dados acessados em Agosto de 2024. O escopo da análise é de um ano.
+Valores estimados em Reais. Dados acessados em Agosto de 2024. O escopo da análise é de um ano.
 
 ### 1. Análise de Gastos Associados à Implementação do Projeto
 
