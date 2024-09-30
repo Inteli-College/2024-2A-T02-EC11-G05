@@ -29,6 +29,7 @@ O projeto **"Contagem do número de árvores através de imagens de satélites/d
 | **16. Gestão do Conhecimento**                 | Médio       | Médio            | 9                                 | Documentar processos e garantir que o conhecimento seja compartilhado entre a equipe para evitar perda de informação crítica. |
 
 ### **Legenda**
+
 - **Impacto**: Avalia a gravidade das consequências se o risco ocorrer (1 = Baixo, 2 = Médio, 3 = Alto).
 - **Probabilidade**: Avalia a chance de o risco ocorrer (1 = Baixo, 2 = Médio, 3 = Alto).
 - **Peso**: Multiplicação do Impacto pela Probabilidade, determinando a prioridade do risco.
@@ -36,4 +37,3 @@ O projeto **"Contagem do número de árvores através de imagens de satélites/d
 ## Conclusão
 
 A matriz de risco apresentada oferece uma visão detalhada dos desafios potenciais que o projeto de contagem de árvores da Abundance Brasil pode enfrentar. Ao identificar e mitigar esses riscos de forma proativa, a equipe pode aumentar as chances de sucesso do projeto, garantindo que a tecnologia desenvolvida cumpra seu objetivo de proteger e restaurar florestas de maneira eficaz e sustentável.
-

@@ -23,19 +23,18 @@ Para treinar o modelo YOLO de segmentação, foi necessário utilizar três data
 
 Vale destacar que o modelo utilizado para a segmentação foi uma versão específica da [Ultralytics YOLO](https://docs.ultralytics.com/tasks/segment/), adaptada para essa tarefa.
 
-
 ## Uso do Modelo
 
 O uso do modelo se baseia em um código em Python que utiliza a biblioteca da Ultralytics combinada com OpenCV. Ao treinar o modelo, é gerado um arquivo chamado `best.pt`, que contém as métricas avaliativas do processo de treinamento. Este arquivo é essencial para a predição e segmentação realizadas pelo modelo.
 
 O código pode ser encontrado na pasta `yolo_model` localizada em `src/modelos/yolo_model`. Para executá-lo, siga os comandos abaixo:
 
-
 ```
 pip install ultralytics
 cd src/models/yolo_model/model_scrip
 python model.py
 ```
+
 Com isso, o modelo será capaz de gerar a imagem já segmentada.
 
 ## Resultados Encontrados

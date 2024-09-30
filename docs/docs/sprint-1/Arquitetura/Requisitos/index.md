@@ -23,7 +23,7 @@ Os requisitos funcionais abrangem as funcionalidades essenciais que o sistema de
 | RF09 | A precisão da detecção de cada árvore deve ser maior ou igual a 90%.                                                   | Essencial       |
 | RF10 | Possuir design de software modularizado para alteração do modelo de reconhecimento de árvores.                          | Essencial       |
 
-## Requisitos não funcionais:
+## Requisitos não funcionais
 
 | ID    | REQUISITO                                                                                                                           | CLASSIFICAÇÃO |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
