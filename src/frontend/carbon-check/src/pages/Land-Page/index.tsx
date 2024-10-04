@@ -1,11 +1,25 @@
-import React from 'react';
+import React from "react";
+import BackgroundImageWithText from "./components/BackgroundImageWithText/BackgroundImageWithText";
+import GradientBackground from "./components/GradientBackground/GradientBackground";
 
-const LandPage = () => {
+const LandPage: React.FC = () => {
+  const handleButtonClick = () => {
+    console.log("Button clicked!");
+  };
+
   return (
     <div>
-      <h1>LandPage
-    
-      </h1>
+      <div>
+        <BackgroundImageWithText
+          title="Transformamos a conservação ambiental através da tecnologia."
+          text="Estamos na vanguarda da tokenização de florestas, gerando créditos de carbono que ajudam a manter as florestas de pé e a garantir um futuro sustentável para o planeta."
+          buttonText="Fazer upload"
+          onButtonClick={handleButtonClick}
+        />
+      </div>
+      <div>
+      <GradientBackground/>
+      </div>
     </div>
   );
 };
