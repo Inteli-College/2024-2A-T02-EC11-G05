@@ -1,6 +1,7 @@
 import React from "react";
 import BackgroundImageWithText from "./components/BackgroundImageWithText/BackgroundImageWithText";
 import GradientBackground from "./components/GradientBackground/GradientBackground";
+import Footer from "./components/footer/footer";
 
 const LandPage: React.FC = () => {
   const handleButtonClick = () => {
@@ -19,6 +20,9 @@ const LandPage: React.FC = () => {
       </div>
       <div>
       <GradientBackground/>
+      </div>
+      <div>
+      <Footer/>
       </div>
     </div>
   );
