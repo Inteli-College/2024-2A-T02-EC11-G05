@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import UploadImage from './components/imageupload/imageupload';
 import CompareImagesButton from './components/compareimg/compareimg';
@@ -71,4 +72,6 @@ const DashBoard: React.FC = () => {
   );
 };
 
+
 export default DashBoard;
+
