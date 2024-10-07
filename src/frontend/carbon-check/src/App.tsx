@@ -1,7 +1,7 @@
 import React from "react";
-import Heather from "./pages/components/heather/heather";
 import LandPage from "./pages/Land-Page";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';import DashBoard from "./pages/Dash-Board";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashBoard from "./pages/Dash-Board";
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         </Routes>
       </Router>
 
-      <Heather />
     </div>
   );
 }

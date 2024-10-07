@@ -2,6 +2,7 @@ import React from "react";
 import BackgroundImageWithText from "./components/BackgroundImageWithText/BackgroundImageWithText";
 import GradientBackground from "./components/GradientBackground/GradientBackground";
 import Footer from "./components/footer/footer";
+import Heather from "../components/heather/heather";
 
 const LandPage: React.FC = () => {
   const handleButtonClick = () => {
@@ -10,6 +11,8 @@ const LandPage: React.FC = () => {
 
   return (
     <div>
+      <Heather />
+
       <div>
         <BackgroundImageWithText
           title="Transformamos a conservação ambiental através da tecnologia."
@@ -19,10 +22,10 @@ const LandPage: React.FC = () => {
         />
       </div>
       <div>
-      <GradientBackground/>
+        <GradientBackground />
       </div>
       <div>
-      <Footer/>
+        <Footer />
       </div>
     </div>
   );
