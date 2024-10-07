@@ -1,10 +1,11 @@
-
 import React, { useState } from "react";
-import UploadImage from './components/imageupload/imageupload';
-import CompareImagesButton from './components/compareimg/compareimg';
-import AnalizeImage from './components/analizeimage/analiseimage';
-import MetricsButton from './components/MetricsButton/MetricsButton';
-import Heather from '../components/heather/heather';
+import UploadImage from "./components/imageupload/imageupload";
+import CompareImagesButton from "./components/compareimg/compareimg";
+import AnalizeImage from "./components/analizeimage/analiseimage";
+import MetricsButton from "./components/MetricsButton/MetricsButton";
+import Heather from "../components/heather/heather";
+import TextGraph from "./components/text_graph/text_graph";
+import VelocimeterGraph from "./components/speed_graph/speed_graph";
 
 const DashBoard: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -27,9 +28,13 @@ const DashBoard: React.FC = () => {
       {/* Header */}
       <Heather />
 
-      <div className="flex-1 flex flex-col items-center justify-center pt-16">
-        <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      {/* Alinhamento com Flex para duplicar os gráficos */}
+      <div className="flex justify-center space-x-8 mt-8">
+        <VelocimeterGraph />
+        <TextGraph />
+      </div>
 
+      <div className="flex-1 flex flex-col items-center justify-center pt-16">
         <div className="flex space-x-4 items-center justify-center">
           {/* Upload Image */}
           <UploadImage onImageUpload={handleImageUpload} />
@@ -44,8 +49,8 @@ const DashBoard: React.FC = () => {
 
           {/* Comparar Imagens */}
           <CompareImagesButton
-            image1={selectedImage ? URL.createObjectURL(selectedImage) : ''}
-            image2={selectedImage ? URL.createObjectURL(selectedImage) : ''}
+            image1={selectedImage ? URL.createObjectURL(selectedImage) : ""}
+            image2={selectedImage ? URL.createObjectURL(selectedImage) : ""}
           />
 
           {/* Ver Métricas */}
@@ -57,7 +62,11 @@ const DashBoard: React.FC = () => {
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
             <div className="bg-white p-4 rounded-lg max-w-lg w-full">
               <h2 className="text-lg font-bold mb-4">Análise de Imagem</h2>
-              <img src={URL.createObjectURL(selectedImage)} alt="Imagem para análise" className="w-full h-auto object-contain" />
+              <img
+                src={URL.createObjectURL(selectedImage)}
+                alt="Imagem para análise"
+                className="w-full h-auto object-contain"
+              />
               <button
                 className="bg-red-500 text-white py-2 px-4 rounded mt-4"
                 onClick={() => setIsModalOpen(false)}
@@ -72,6 +81,4 @@ const DashBoard: React.FC = () => {
   );
 };
 
-
 export default DashBoard;
-
