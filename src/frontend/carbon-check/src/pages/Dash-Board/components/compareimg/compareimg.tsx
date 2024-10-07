@@ -24,7 +24,7 @@ const CompareImagesButton: React.FC<CompareImagesButtonProps> = ({ image1, image
     <div>
       <button
         onClick={handleCompareClick}
-        className="bg-green-500 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-green-600 transition duration-300"
+        className="bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-700 transition duration-300"
       >
         Comparar Imagens
       </button>
