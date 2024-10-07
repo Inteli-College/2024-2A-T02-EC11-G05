@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import UploadImage from './components/imageupload/imageupload';
 import CompareImagesButton from './components/compareimg/compareimg';
 import AnalizeImage from './components/analizeimage/analiseimage';
-
+import MetricsButton from './components/MetricsButton/MetricsButton';
 import Heather from '../components/heather/heather';
-import MetricsButton from "./components/MetricsButton/MetricsButton";
 
 const DashBoard: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showMetrics, setShowMetrics] = useState(false);
 
   const handleImageUpload = (image: File) => {
     setSelectedImage(image);
@@ -21,10 +19,6 @@ const DashBoard: React.FC = () => {
     } else {
       alert("Por favor, insira uma imagem antes de analisar.");
     }
-  };
-
-  const handleMetricsClick = () => {
-    setShowMetrics(true);
   };
 
   return (
@@ -54,9 +48,7 @@ const DashBoard: React.FC = () => {
           />
 
           {/* Ver Métricas */}
-          <MetricsButton
-            onClick={handleMetricsClick}
-          />
+          <MetricsButton />
         </div>
 
         {/* Modal de Ampliar Imagem */}
@@ -72,20 +64,6 @@ const DashBoard: React.FC = () => {
                 Fechar
               </button>
             </div>
-          </div>
-        )}
-
-        {/* Exibição das Métricas */}
-        {showMetrics && (
-          <div className="mt-4">
-            <h3 className="font-bold text-lg">Métricas Ambientais:</h3>
-            <ul className="list-disc ml-5">
-              <li>CO2 Sequestrado: 48 kg de CO2 por ano por árvore.</li>
-              <li>Oxigênio Produzido: 117 kg de oxigênio por ano por árvore.</li>
-              <li>Água Retida: 378 litros de água por dia por árvore.</li>
-              <li>Solo Preservado: 200 kg de solo por ano por árvore.</li>
-              <li>Biodiversidade Suportada: Até 10 espécies diferentes por árvore.</li>
-            </ul>
           </div>
         )}
       </div>
