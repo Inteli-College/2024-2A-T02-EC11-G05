@@ -1,8 +1,6 @@
 import React from 'react';
-
-// Ajuste os paths para as imagens corretas
-import CarbonCheckLogo from '/home/gabriel/2024-2A-T02-EC11-G05/src/frontend/carbon-check/src/assets/CARBON_CHECK-removebg-preview 2.png';
-import AbundanceBrasilLogo from '/home/gabriel/2024-2A-T02-EC11-G05/src/frontend/carbon-check/src/assets/abundance_img.png';
+import CarbonCheckLogo from '../../../../assets/CARBON_CHECK-removebg-preview 2.png';
+import AbundanceBrasilLogo from '../../../../assets/abundance_img.png';
 
 
 const Footer: React.FC = () => {
