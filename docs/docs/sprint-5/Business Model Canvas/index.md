@@ -12,7 +12,7 @@ O Business Model Canvas da nossa solução propõe um sistema voltado para a ras
 Na imagem abaixo é possível visualizar o business model canvas.
 
 
-![Canvas ](../../../assets/sprint-5/bmc.jpg)
+![Canvas ](../../assets/sprint-5/bmc.jpg)
 
 
 ## Conclusão
