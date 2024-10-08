@@ -7,6 +7,7 @@ import Heather from "../components/heather/heather";
 import TextGraph from "./components/text_graph/text_graph";
 import VelocimeterGraph from "./components/speed_graph/speed_graph";
 
+
 const DashBoard: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
