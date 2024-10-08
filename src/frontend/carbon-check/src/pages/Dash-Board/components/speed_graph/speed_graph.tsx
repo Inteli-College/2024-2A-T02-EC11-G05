@@ -3,18 +3,16 @@ import Stack from '@mui/material/Stack';
 import { Gauge } from '@mui/x-charts/Gauge';
 import { Box, Typography } from '@mui/material';
 
-
-
 const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: number }> = ({ value, minValue, maxValue }) => {
   const normalizedValue = ((value - minValue) / (maxValue - minValue)) * 100;
 
   return (
     <Box sx={{ textAlign: 'center' }}>
-      <Stack direction="column" spacing={-2} alignItems="center" justifyContent="center">
+      <Stack direction="column" spacing={-3.5} alignItems="center" justifyContent="center">
         <Gauge
           value={normalizedValue}
-          width={300}
-          height={200}
+          width={250}  // Ajuste aqui para o mesmo valor do TextGraph
+          height={250}  // Ajuste aqui para o mesmo valor do TextGraph
           startAngle={-90}
           endAngle={90}
           sx={{
@@ -39,7 +37,6 @@ const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: numb
           </defs>
         </svg>
 
-
         <Typography
           variant="h6"
           sx={{
@@ -48,12 +45,11 @@ const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: numb
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }}
-          
         >
           {value}%
         </Typography>
 
-        <Box display="flex" justifyContent="space-between" width="100%" maxWidth="300px">
+        <Box display="flex" justifyContent="space-between" width="100%" maxWidth="250px">
           <Typography variant="body2" sx={{ ml: 2.5 }}>
             {minValue}
           </Typography>
@@ -66,16 +62,12 @@ const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: numb
   );
 };
 
-
 const VelocimeterGraph: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg shadow-lg w-full">
-      <TrustComponent value={56} minValue={0} maxValue={100}  />
+    <div className="bg-white shadow-lg w-full border w-1/2 border border-gray-300 p-6">
+      <TrustComponent value={56} minValue={0} maxValue={100} />
       <h2 className="text-center text-xl font-bold mt-5 mb-10">Intervalo de Árvores</h2>
     </div>
   );
-
-
 };
-
 export default VelocimeterGraph;

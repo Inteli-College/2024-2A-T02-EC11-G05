@@ -28,12 +28,13 @@ const DashBoard: React.FC = () => {
       {/* Header */}
       <Heather />
 
-      {/* Alinhamento com Flex para duplicar os gráficos */}
-      <div className="flex justify-center space-x-8 mt-8">
+      {/* Centralização e Espaçamento dos Gráficos */}
+      <div className="flex justify-center space-x-7 mt-12 mx-auto max-w-7xl">
         <VelocimeterGraph />
         <TextGraph />
       </div>
 
+      {/* Seção dos Botões e Interações */}
       <div className="flex-1 flex flex-col items-center justify-center pt-16">
         <div className="flex space-x-4 items-center justify-center">
           {/* Upload Image */}

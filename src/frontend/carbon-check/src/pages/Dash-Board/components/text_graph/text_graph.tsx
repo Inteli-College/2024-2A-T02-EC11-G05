@@ -47,7 +47,7 @@ const TreeNumber: React.FC<TreeNumberProps> = ({ value, label, imageSrc }) => {
 
 const TextGraph: React.FC = () => {
   return (
-    <Box className="bg-white p-6 rounded-lg shadow-lg">
+    <Box className="bg-white p-6 rounded-lg shadow-lg w-1/2">
       <div className="flex justify-center space-x-6">
         <TreeNumber value={198} label="TOTAL DE ÁRVORES" imageSrc="tree" />
         <TreeNumber value="3366 KG" label="CARBONO RECICLADO" imageSrc="carbono" />
@@ -55,5 +55,6 @@ const TextGraph: React.FC = () => {
     </Box>
   );
 };
+
 
 export default TextGraph;
