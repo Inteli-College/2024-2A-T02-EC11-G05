@@ -1,24 +1,35 @@
 import React, { useState } from "react";
 import UploadImage from "./components/imageupload/imageupload";
 import CompareImagesButton from "./components/compareimg/compareimg";
-import AnalizeImage from "./components/analizeimage/analiseimage";
 import MetricsButton from "./components/MetricsButton/MetricsButton";
 import Heather from "../components/heather/heather";
 import TextGraph from "./components/text_graph/text_graph";
 import VelocimeterGraph from "./components/speed_graph/speed_graph";
 
-
 const DashBoard: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [backendImage, setBackendImage] = useState<string | null>(null); // Estado para armazenar a imagem do backend
 
   const handleImageUpload = (image: File) => {
     setSelectedImage(image);
   };
 
-  const handleAnalyzeImage = () => {
+  const handleAnalyzeImage = async () => {
     if (selectedImage) {
-      setIsModalOpen(true);
+      try {
+        const response = await fetch("http://127.0.0.1:8000/processed-image"); // Insira a URL do backend aqui
+        if (response.ok) {
+          const blob = await response.blob();
+          const imageUrl = URL.createObjectURL(blob);
+          setBackendImage(imageUrl); // Armazena a imagem do backend no estado
+          setIsModalOpen(true); // Abre o modal após carregar a imagem
+        } else {
+          console.error("Erro ao buscar a imagem:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Erro ao fazer a requisição:", error);
+      }
     } else {
       alert("Por favor, insira uma imagem antes de analisar.");
     }
@@ -60,12 +71,12 @@ const DashBoard: React.FC = () => {
         </div>
 
         {/* Modal de Ampliar Imagem */}
-        {isModalOpen && selectedImage && (
+        {isModalOpen && backendImage && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
             <div className="bg-white p-4 rounded-lg max-w-lg w-full">
               <h2 className="text-lg font-bold mb-4">Análise de Imagem</h2>
               <img
-                src={URL.createObjectURL(selectedImage)}
+                src={backendImage}
                 alt="Imagem para análise"
                 className="w-full h-auto object-contain"
               />
