@@ -37,6 +37,8 @@ Este repositório contém várias pastas e arquivos importantes. Aqui está um r
 
 - docs: Neste diretório há toda a documentação do desenvolvimento do projeto e outros arquivos relacionados a documentação. Para acessar clique [aqui](https://inteli-college.github.io/2024-2A-T02-EC11-G05/)
 
+- src: Nesta pasta há todos os arquivos referentes a código. Existem as pastas de backend, frontend e modelo. Cada uma delas tem todo o código desenvolvido. 
+
 
 - .gitignore: Arquivo utilizado para especificar quais arquivos ou diretórios o Git deve ignorar. -->
 
