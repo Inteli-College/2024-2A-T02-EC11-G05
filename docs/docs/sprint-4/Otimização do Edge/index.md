@@ -1,8 +1,7 @@
 ---
 title: Otimização do sistema de Edge 
-sidebar_position: 2
+sidebar_position: 3
 ---
-
 # Otimização de Algoritmos de Visão Computacional em Hardware de Borda (Raspberry Pi 5)
 
 ## Introdução
@@ -22,6 +21,7 @@ Foram implementados três modelos de visão computacional embarcados no Raspberr
 ## Métricas e Desempenho
 
 ### 1. YOLOv8 Nano (Segmentação)
+
 O YOLOv8 Nano foi o primeiro modelo testado, e apresentou resultados sólidos em termos de segmentação, conseguindo alcançar uma marcação de aproximadamente 80% de precisão em um tempo médio de 3 segundos. Abaixo estão as métricas de uso de CPU e memória durante o carregamento e processamento da imagem:
 
 - **Uso de CPU após carregar o modelo**: 14.8%
