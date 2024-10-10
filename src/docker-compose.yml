@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: abundance-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/resources:/app/resources
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - modelos
+    networks:
+      - abundance-network
+
+  frontend:
+    build:
+      context: ./frontend/carbon-check
+      dockerfile: Dockerfile
+    container_name: abundance-frontend
+    ports:
+      - "3000:80"  # Map port 80 inside the container to port 3000 on the host
+    networks:
+      - abundance-network
+
+  modelos:
+    build:
+      context: ./modelos
+      dockerfile: Dockerfile
+    container_name: abundance-modelos
+    volumes:
+      - ./modelos:/app
+      - ./modelos/yolo_model:/app/yolo_model
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - abundance-network
+
+networks:
+  abundance-network:
+    driver: bridge
