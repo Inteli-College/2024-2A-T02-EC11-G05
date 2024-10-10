@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import UploadImage from "./components/imageupload/imageupload";
-import CompareImagesButton from "./components/compareimg/compareimg";
 import MetricsButton from "./components/MetricsButton/MetricsButton";
 import Heather from "../components/heather/heather";
 import TextGraph from "./components/text_graph/text_graph";
@@ -36,60 +35,54 @@ const DashBoard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       {/* Header */}
       <Heather />
 
       {/* Centralização e Espaçamento dos Gráficos */}
-      <div className="flex justify-center space-x-7 mt-12 mx-auto max-w-7xl">
+      <div className="flex justify-center items-center space-x-10 mt-12 mx-auto max-w-6xl">
         <VelocimeterGraph />
         <TextGraph />
       </div>
 
       {/* Seção dos Botões e Interações */}
-      <div className="flex-1 flex flex-col items-center justify-center pt-16">
-        <div className="flex space-x-4 items-center justify-center">
+      <div className="flex flex-col items-center justify-center pt-16 space-x-4">
+        <div className="flex space-x-6">
           {/* Upload Image */}
           <UploadImage onImageUpload={handleImageUpload} />
 
           {/* Ampliar Imagem */}
           <button
-            className="bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-700 transition duration-300"
+            className="bg-gray-800 text-white font-semibold py-2 px-6 rounded-lg flex items-center justify-center hover:bg-gray-700 transition duration-300"
             onClick={handleAnalyzeImage}
           >
-            Ampliar Imagem
+            Analisar Terreno
           </button>
-
-          {/* Comparar Imagens */}
-          <CompareImagesButton
-            image1={selectedImage ? URL.createObjectURL(selectedImage) : ""}
-            image2={selectedImage ? URL.createObjectURL(selectedImage) : ""}
-          />
 
           {/* Ver Métricas */}
           <MetricsButton />
         </div>
-
-        {/* Modal de Ampliar Imagem */}
-        {isModalOpen && backendImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-            <div className="bg-white p-4 rounded-lg max-w-lg w-full">
-              <h2 className="text-lg font-bold mb-4">Análise de Imagem</h2>
-              <img
-                src={backendImage}
-                alt="Imagem para análise"
-                className="w-full h-auto object-contain"
-              />
-              <button
-                className="bg-red-500 text-white py-2 px-4 rounded mt-4"
-                onClick={() => setIsModalOpen(false)}
-              >
-                Fechar
-              </button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Modal de Ampliar Imagem */}
+      {isModalOpen && backendImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white p-4 rounded-lg max-w-lg w-full">
+            <h2 className="text-lg font-bold mb-4">Análise de Imagem</h2>
+            <img
+              src={backendImage}
+              alt="Imagem para análise"
+              className="w-full h-auto object-contain"
+            />
+            <button
+              className="bg-red-500 text-white py-2 px-4 rounded mt-4"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

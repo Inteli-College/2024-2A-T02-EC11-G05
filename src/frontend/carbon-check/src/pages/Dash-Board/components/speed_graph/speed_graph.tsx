@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Stack from '@mui/material/Stack';
 import { Gauge } from '@mui/x-charts/Gauge';
 import { Box, Typography } from '@mui/material';
 
 const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: number }> = ({ value, minValue, maxValue }) => {
+  // Normaliza o valor para estar entre 0 e 100
   const normalizedValue = ((value - minValue) / (maxValue - minValue)) * 100;
 
   return (
@@ -46,7 +47,7 @@ const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: numb
             WebkitTextFillColor: 'transparent',
           }}
         >
-          {value}%
+          {value}
         </Typography>
 
         <Box display="flex" justifyContent="space-between" width="100%" maxWidth="250px">
@@ -63,11 +64,48 @@ const TrustComponent: React.FC<{ value: number, minValue: number, maxValue: numb
 };
 
 const VelocimeterGraph: React.FC = () => {
+  const [minValue, setMinValue] = useState<number | null>(null); // Estado para o valor mínimo de árvores
+  const [maxValue, setMaxValue] = useState<number | null>(null); // Estado para o valor máximo de árvores
+  const [centralValue, setCentralValue] = useState<number | null>(null); // Estado para o valor central de árvores
+  const [isLoading, setIsLoading] = useState(true); // Estado de carregamento
+
+  // Função para buscar as métricas da API
+  const fetchMetrics = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/metrics'); // URL da API para buscar métricas
+      if (response.ok) {
+        const data = await response.json();
+        setMinValue(data.estimated_trees_min); // Atualiza o valor mínimo de árvores
+        setMaxValue(data.estimated_trees_max); // Atualiza o valor máximo de árvores
+        setCentralValue(data.estimated_trees_central); // Atualiza o valor central
+      } else {
+        console.error('Erro ao buscar as métricas:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro ao fazer a requisição:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchMetrics(); // Chama a função para buscar métricas ao montar o componente
+  }, []);
+
   return (
     <div className="bg-white shadow-lg w-full border w-1/2 border border-gray-300 p-6">
-      <TrustComponent value={56} minValue={0} maxValue={100} />
+      {isLoading ? (
+        <Typography variant="h6" align="center">Carregando métricas...</Typography>
+      ) : (
+        <TrustComponent
+          value={centralValue !== null ? centralValue : 0} // Usa o valor central para o gráfico
+          minValue={minValue !== null ? minValue : 0} // Usa o valor mínimo de árvores
+          maxValue={maxValue !== null ? maxValue : 100} // Usa o valor máximo de árvores
+        />
+      )}
       <h2 className="text-center text-xl font-bold mt-5 mb-10">Intervalo de Árvores</h2>
     </div>
   );
 };
+
 export default VelocimeterGraph;
